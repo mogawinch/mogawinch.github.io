@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Maintenance msg="Coming Soon!"/>
+    <Maintenance msg="Coming Soon."/>
     <Footer/>
   </div>
 </template>
