@@ -49,12 +49,10 @@ export default {
   animation-name: winch-move;
   animation-duration: 10s;
   animation-iteration-count: infinite;
-  z-index: 1;
 }
 .bottom {
   width: 130px;
   padding-left: 142px;
-  z-index: 0;
 }
 
 @keyframes winch-move {
