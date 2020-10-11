@@ -1,16 +1,19 @@
 <template>
   <div id="app">
     <Maintenance msg="Coming Soon!"/>
+    <Footer/>
   </div>
 </template>
 
 <script>
 import Maintenance from './components/Maintenance.vue'
+import Footer from './components/Footer.vue'
 
 export default {
   name: 'App',
   components: {
-    Maintenance
+    Maintenance,
+    Footer
   }
 }
 </script>
@@ -31,6 +34,9 @@ body {
   color: #18110e;
   margin-top: 100px;
   width: 100%;
-  height: 100%;
+  min-height: calc(100vh - 100px);
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-rows: 1fr 0fr;
 }
 </style>

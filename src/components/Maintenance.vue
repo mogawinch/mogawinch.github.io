@@ -27,7 +27,7 @@ export default {
 .maintenance {
   display: grid;
   grid-auto-flow: row;
-  grid-gap: 30px;
+  grid-gap: 20px;
 }
 .message {
   font-size: 50px;
