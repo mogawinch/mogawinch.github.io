@@ -47,7 +47,7 @@ export default {
   width: 300px;
   padding-left:120px;
   animation-name: winch-move;
-  animation-duration: 6s;
+  animation-duration: 10s;
   animation-iteration-count: infinite;
   z-index: 1;
 }
