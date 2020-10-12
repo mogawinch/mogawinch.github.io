@@ -54,6 +54,17 @@ export default {
   width: 130px;
   padding-left: 142px;
 }
+/* On screens that are 600px or less, set the background color to blue */
+@media screen and (max-width: 600px) {
+  .top {
+    width: 231px;
+    padding-left:92px;
+  }
+  .bottom {
+    width: 100px;
+    padding-left: 108px;
+  }
+}
 
 @keyframes winch-move {
   50% {transform: scaleX(-1);}

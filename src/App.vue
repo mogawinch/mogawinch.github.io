@@ -23,10 +23,10 @@ body, html {
   padding: 0;
   margin: 0;
   width: 100%;
-  min-height: 100vh;
 }
 body {
-  background-image: linear-gradient(to right bottom,#eacda3 , #d6ae7b);
+  background-image: linear-gradient(to right bottom, #eacda3 49.9%, #d6ae7b 50.1%);
+  background-size: cover;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
