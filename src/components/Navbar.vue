@@ -44,7 +44,7 @@ export default {
 .navbar {
    display: grid;
    grid-template-areas: 'home-button menu . .';
-   box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.16);
+   box-shadow: 0 2px 4px 0 rgb(0 0 0 / 8%);
    grid-auto-columns: 0fr 0fr 1fr 1fr;
 
   .home-button {
@@ -66,6 +66,7 @@ export default {
 
     .home-text {
       align-self: center;
+      justify-self: center;
       margin: 10px;
     }
 
@@ -79,13 +80,11 @@ export default {
     grid-area: 'menu';
     grid-auto-flow: column;
     text-align: center;
-    align-items: center;
-    justify-content: center;
 
     .tab {
       font-style: normal;
       width: 100px;
-      line-height: 56px;
+      line-height: 67px;
       padding: 0px 24px;
       text-decoration: none;
       color: #000;
