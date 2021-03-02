@@ -1,19 +1,16 @@
 <template>
   <div id="home">
     <Maintenance msg="Coming Soon."/>
-    <Footer/>
   </div>
 </template>
 
 <script>
 import Maintenance from '@/components/Maintenance.vue'
-import Footer from '@/components/Footer.vue'
 
 export default {
   name: 'Home',
   components: {
     Maintenance,
-    Footer
   }
 }
 </script>
