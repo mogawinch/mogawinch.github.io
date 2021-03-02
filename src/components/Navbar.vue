@@ -1,9 +1,9 @@
 <template>
   <div class="navbar">
-    <div class="home-button">
+    <router-link class="home-button" :to="{ name: home }">
       <img class="logo" alt="MogaWinch logo" src="@/assets/logo.png">
       <span class="home-text">MogaWinch</span>
-    </div>
+    </router-link>
     <div class="menu">
       <router-link
         v-for="(tab, index) in tabs"
@@ -23,8 +23,9 @@ export default {
   name: 'Navbar',
   data: () => {
     return {
+      home: NAMED_ROUTES.HOME,
       tabs: [
-        { title:'Home', routeName: NAMED_ROUTES.HOME, url: '/' },
+        { title:'Projects', routeName: NAMED_ROUTES.PROJECTS },
       ],
     };
   },
@@ -52,7 +53,10 @@ export default {
     grid-area: 'home-button';
     grid-auto-columns: 0fr 1fr;
     width: 200px;
+    font-style: normal;
     cursor: pointer;
+    color: #000;
+    text-decoration: none;
 
     .logo {
       width: 46px;
@@ -87,7 +91,6 @@ export default {
       color: #000;
       font-size: 16px;
       cursor: pointer;
-      box-sizing: content-box;
 
       &.active {
         font-weight: bold;
