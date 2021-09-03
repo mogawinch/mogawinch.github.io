@@ -1,0 +1,41 @@
+﻿.maintenance {
+  display: grid;
+  grid-auto-flow: row;
+  grid-gap: 20px;
+  justify-content: center;
+}
+.message {
+  font-size: 50px;
+  font-weight: bold;
+  padding: 20px 10px;
+}
+.description {
+  font-size: 18px;
+}
+.winch {
+  display: grid;
+  grid-auto-flow: row;
+  align-content: center;
+  justify-content: center;
+}
+.logo-anim {
+  width: 300px;
+  animation-name: winch-move;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+.text{
+  display: grid;
+  justify-items: center;
+}
+/* On screens that are 600px or less, set the background color to blue */
+@media screen and (max-width: 600px) {
+  .top {
+    width: 231px;
+  }
+}
+
+@keyframes winch-move {
+  50% {transform: scaleX(-1);}
+  100% {transform: scaleX(1);}
+}
