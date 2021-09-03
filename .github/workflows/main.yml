@@ -13,7 +13,7 @@ jobs:
       - name: Setup .NET Core SDK 💻
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: 3.1
+          dotnet-version: 5
 
       - name: Build 🔧
         run: dotnet publish Mogawinch.Website.sln -c Release -o release
