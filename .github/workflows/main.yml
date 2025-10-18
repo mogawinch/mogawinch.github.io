@@ -16,7 +16,7 @@ jobs:
          sudo apt update --allow-insecure-repositories
 
       - name: Install libssl1.0-dev
-        run: sudo apt-get install -y libssl1.0-dev
+        run: sudo apt-get install -y libssl1.0-dev --allow-unauthenticated
 
       - name: Setup .NET Core SDK 💻
         uses: actions/setup-dotnet@v1
