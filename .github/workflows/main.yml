@@ -5,10 +5,18 @@ on:
       - master
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v2.3.1
+
+      - name: Add bionic-security repository for libssl1.0
+        run: |
+         echo "deb http://security.ubuntu.com/ubuntu bionic-security main" | sudo tee -a /etc/apt/sources.list
+         sudo apt update
+
+      - name: Install libssl1.0-dev
+        run: sudo apt-get install -y libssl1.0-dev
 
       - name: Setup .NET Core SDK 💻
         uses: actions/setup-dotnet@v1
