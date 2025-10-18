@@ -18,6 +18,9 @@ jobs:
       - name: Install libssl1.0-dev
         run: sudo apt-get install -y libssl1.0-dev --allow-unauthenticated
 
+      - name: Override SSL Conf
+        run: sudo sed -i '/^ssl_conf =/s/^/#/' /etc/ssl/openssl.cnf
+
       - name: Setup .NET Core SDK 💻
         uses: actions/setup-dotnet@v1
         with:
