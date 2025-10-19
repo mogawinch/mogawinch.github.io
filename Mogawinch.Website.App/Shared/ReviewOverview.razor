@@ -1,0 +1,22 @@
+﻿<div class="review-overview">
+    <img class="reviewImage" loading="lazy" src="@ImagePath"/>
+    <span class="reviewTitle">@Title</span>
+    <div class="review-secondary">
+        <span>@Author</span>
+        <span>@Date</span>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string ImagePath { get; set; }
+    
+    [Parameter]
+    public string Title { get; set; }
+
+    [Parameter]
+    public string Author { get; set; }
+
+    [Parameter]
+    public string Date { get; set; }
+}
