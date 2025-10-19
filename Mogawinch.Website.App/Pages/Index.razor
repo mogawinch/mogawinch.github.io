@@ -1,37 +1,71 @@
 ﻿@page "/"
+@using Mogawinch.Models
+@using System.IO
+@using System.Text.Json
 
 <div id="home">
-    <h2 class="review-title">Latest Game Reviews</h2>
+    <h2 class="review-title">Featured Reviews</h2>
     <div class="review-grid">
+        @foreach (var review in reviews)
+        {
+            <ReviewOverview
+                ImagePath="@review.ImagePath" 
+                Title="@review.Title"
+                Author="@review.Author"
+                Date="@review.Date"/>
+        }
         <ReviewOverview
-            ImagePath="assets/logo.png" 
+            ImagePath="assets/review_test.jpg" 
             Title="Best Review"
             Author="Mark Winch"
             Date="18/10/2025"/>
         <ReviewOverview
-            ImagePath="assets/logo.png" 
+            ImagePath="assets/review_test.jpg" 
             Title="Best Review"
             Author="Mark Winch"
             Date="18/10/2025"/>
         <ReviewOverview
-            ImagePath="assets/logo.png" 
+            ImagePath="assets/review_test.jpg" 
             Title="Best Review"
             Author="Mark Winch"
             Date="18/10/2025"/>
         <ReviewOverview
-            ImagePath="assets/logo.png" 
+            ImagePath="assets/review_test.jpg" 
             Title="Best Review"
             Author="Mark Winch"
             Date="18/10/2025"/>
         <ReviewOverview
-            ImagePath="assets/logo.png" 
+            ImagePath="assets/review_test.jpg" 
             Title="Best Review"
             Author="Mark Winch"
             Date="18/10/2025"/>
         <ReviewOverview
-            ImagePath="assets/logo.png" 
+            ImagePath="assets/review_test.jpg" 
             Title="Best Review"
             Author="Mark Winch"
             Date="18/10/2025"/>
     </div>
 </div>
+
+@code {
+    private List<Review> reviews = new List<Review>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        try 
+        {
+            var paths = Directory.GetFiles("content/reviews");
+
+            foreach(var path in paths) 
+            {
+                string jsonContent = await File.ReadAllTextAsync(path);
+                var data = JsonSerializer.Deserialize<Review>(jsonContent);
+                reviews.Add(data);
+            }
+        }
+        catch
+        {
+            //dont crash
+        }
+    }
+}
