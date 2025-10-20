@@ -18,10 +18,17 @@
 
 .review-grid[b-vbo520ba11] {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(2, minmax(300px, 1fr)); /* Two cards per row, cards expand up to 1fr each */
+    gap: 2rem;
     padding: 2rem;
     justify-items: center;
+}
+
+/* Mobile layout: 1 card per row */
+@media (max-width: 641px) {
+    .review-grid[b-vbo520ba11] {
+        grid-template-columns: 1fr;
+    }
 }
 /* /Shared/MainLayout.razor.rz.scp.css */
 .page[b-xxmk50sjkk] {
@@ -218,15 +225,13 @@
 }
 /* /Shared/ReviewOverview.razor.rz.scp.css */
 .review-overview[b-1srkehvyqx] {
-    width: 30%;
-    min-width: 280px;
-    max-width: 400px;
+    width: 100%;
+    max-width: 600px;
     background-color: #1e1e2f;
     color: #ffffff;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    margin: 1rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
     display: flex;
