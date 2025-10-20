@@ -38,6 +38,17 @@
     background-color: darkslategrey;
 }
 
+.social-media[b-xxmk50sjkk] {
+    display: inline-flex;
+    height: 25px;
+    justify-self: end;
+}
+
+.social-media > img[b-xxmk50sjkk] {
+    object-fit: cover;
+    margin-left: 10px;
+}
+
 .top-row[b-xxmk50sjkk] {
     background-color: #f7f7f7;
     border-bottom: 2px solid #d6d5d5;
@@ -148,6 +159,12 @@
 
 .navbar-brand[b-zlikp0xd1t] {
     font-size: 1.1rem;
+    font-weight: bolder;
+    background-image: url("assets/mogawinch_logo.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    -webkit-text-stroke: 1px #444;
 }
 
 .oi[b-zlikp0xd1t] {
