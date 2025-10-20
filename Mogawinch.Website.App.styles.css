@@ -2,18 +2,22 @@
 .home-banner[b-vbo520ba11] {
     background-color: #f4f4f4;
     color: #333;
-    text-align: center;
+    /*text-align: center;*/
     padding: 15px 10px;
     font: size 1.1em;
     border-bottom: 1px solid #ddd;
 }
 
+/* Align the title to the same content width as the grid */
 .review-title[b-vbo520ba11] {
     font-size: 2rem;
     font-weight: 500;
     color: #666;
-    margin-bottom: 10px;
-    margin-top: 10px;
+    margin: 0 auto 10px;
+    padding: 0 2rem; /* same lateral padding as the grid */
+    max-width: 1300px; /* same width as .review-grid container */
+    box-sizing: border-box;
+    text-align: left; /* align text with the grid columns */
 }
 
 .review-grid[b-vbo520ba11] {
@@ -22,12 +26,15 @@
     gap: 2rem;
     padding: 2rem;
     justify-items: center;
+    max-width: 1300px; /* limit total grid width */
+    margin: 0 auto; /* center the grid on the page */
 }
 
 /* Mobile layout: 1 card per row */
 @media (max-width: 641px) {
     .review-grid[b-vbo520ba11] {
         grid-template-columns: 1fr;
+        max-width: 600px; /* prevent card from being too wide on mobile */
     }
 }
 /* /Shared/MainLayout.razor.rz.scp.css */
