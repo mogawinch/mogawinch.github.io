@@ -9,6 +9,12 @@
 
 .navbar-brand {
     font-size: 1.1rem;
+    font-weight: bolder;
+    background-image: url("assets/mogawinch_logo.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    -webkit-text-stroke: 1px #444;
 }
 
 .oi {

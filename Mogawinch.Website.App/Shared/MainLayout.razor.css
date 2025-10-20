@@ -12,6 +12,17 @@
     background-color: darkslategrey;
 }
 
+.social-media {
+    display: inline-flex;
+    height: 25px;
+    justify-self: end;
+}
+
+.social-media > img {
+    object-fit: cover;
+    margin-left: 10px;
+}
+
 .top-row {
     background-color: #f7f7f7;
     border-bottom: 2px solid #d6d5d5;
