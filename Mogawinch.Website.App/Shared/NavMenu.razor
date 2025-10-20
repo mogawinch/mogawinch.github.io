@@ -9,17 +9,31 @@
     <ul class="nav flex-column">
         <li class="nav-item px-3">
             <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                Home
+                HOME
             </NavLink>
         </li>
+        <!-- Collapsible REVIEWS section -->
         <li class="nav-item px-3">
-            <NavLink class="nav-link" href="reviews">
-                Reviews
-            </NavLink>
+            <button class="nav-link nav-collapse" @onclick="ToggleReviews" @onclick:stopPropagation="true">
+                REVIEWS
+                <span class="arrow">@((isReviewsOpen ? "▲" : "▼"))</span>
+            </button>
+
+            @if (isReviewsOpen)
+            {
+                <ul class="submenu list-unstyled ms-3">
+                    <li>
+                        <NavLink class="nav-link submenu-link" href="/reviews/games">
+                            Games
+                        </NavLink>
+                    </li>
+                    @* Add more sub-items later if needed *@
+                </ul>
+            }
         </li>
         <li class="nav-item px-3">
             <NavLink class="nav-link" href="about">
-                About
+                ABOUT
             </NavLink>
         </li>
     </ul>
@@ -29,6 +43,13 @@
     private bool collapseNavMenu = true;
 
     private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private bool isReviewsOpen = false;
+
+    private void ToggleReviews(MouseEventArgs e)
+    {
+        isReviewsOpen = !isReviewsOpen;
+    }
 
     private void ToggleNavMenu()
     {

@@ -1,0 +1,172 @@
+/* Review Page Container */
+.review-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Banner Image */
+.review-banner img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Review Title */
+.review-page-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+/* Paragraphs */
+.review-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 1rem;
+}
+
+/* Notes Section */
+.review-notes {
+    background: linear-gradient(
+        135deg,
+        darkslategrey 0%,
+        #2c2c44 100%
+    );
+    color: #fff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+    .review-notes h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+/* Pros / Cons Layout */
+.note-recap {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.pros-cons {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    position: relative;
+}
+
+/* Vertical separator line */
+.pros-cons::after {
+    content: "";
+    position: absolute;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    left: 50%;
+    width: 1px;
+    background-color: rgba(255,255,255,0.2); /* subtle light line */
+    transform: translateX(-50%);
+}
+
+/* Ensure pros and cons columns take equal width */
+.pros, .cons {
+    flex: 1;
+    padding: 0 1rem;
+}
+
+    .pros h3, .cons h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .pros ul, .cons ul {
+        list-style: disc inside;
+    }
+
+/* Score */
+.score {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #fff;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+}
+
+/* Color-coded based on score */
+.score-low { background-color: #e74c3c; }   /* red */
+.score-medium { background-color: #f1c40f; color: #000; }  /* yellow */
+.score-high { background-color: #2ecc71; }
+
+.review-meta {
+    font-size: 0.9rem;
+    opacity: 0.9; /* slightly darker */
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.review-author {
+    font-weight: 500;
+    color: #888; /* darker, subtle tone */
+}
+
+.review-date {
+    color: #777; /* slightly darker than before */
+}
+
+.separator {
+    color: #666; /* darker dot */
+}
+
+.review-middle-image {
+    width: 100%;
+    margin: 1.5rem 0; /* spacing above and below */
+    text-align: center;
+}
+
+.review-middle-image img {
+    width: 80%;          /* smaller than full width */
+    max-width: 500px;    /* prevent it from getting too large on desktop */
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2); /* lighter shadow than main banner */
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;      /* center the image */
+}
+
+/* Responsive for Mobile */
+@media (max-width: 640px) {
+    .pros-cons {
+        flex-direction: column;
+    }
+
+    .pros-cons::after {
+        display: none;
+    }
+
+    .pros, .cons {
+        padding: 0;
+    }
+
+    .review-middle-image img {
+        width: 95%;       /* almost full width on small screens */
+        max-width: unset; /* allow flexibility */
+        height: auto;
+    }
+}

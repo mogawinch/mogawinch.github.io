@@ -24,13 +24,13 @@ jobs:
       - name: Setup .NET Core SDK 💻
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: 5.0.x
+          dotnet-version: 8.0.x
 
       - name: Build 🔧
         run: dotnet publish Mogawinch.Website.sln -c Release -o release
 
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@4.0.0
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
           folder: release/wwwroot

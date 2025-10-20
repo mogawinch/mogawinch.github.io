@@ -1,0 +1,15 @@
+namespace Mogawinch.Helper.Extensions
+{
+    public static class HttpClientExtensions
+    {
+        public static async Task<T> GetFromInternalJsonAsync<T>(HttpClient Http, string requestUri)
+        {
+            using (var response = await Http.GetAsync(requestUri, HttpCompletionOption.ResponseHeadersRead))
+            {
+                var jsonResult = await response.Content.ReadFromJsonAsync<T>();
+
+                return jsonResult;
+            }
+        }
+    }   
+}

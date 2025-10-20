@@ -3,69 +3,89 @@
 @using System.IO
 @using System.Text.Json
 
+@inject IJSRuntime JS
+@inject HttpClient Http
+@inject NavigationManager NavManager
+
 <div id="home">
-    <h2 class="review-title">Featured Reviews</h2>
-    <div class="review-grid">
-        @foreach (var review in reviews)
+    @if (Reviews == null)
+    {
+        <p><em>Loading...</em></p>
+    }
+    else
+    {
+        @if (Reviews.Count() > 0)
         {
-            <ReviewOverview
-                ImagePath="@review.ImagePath" 
-                Title="@review.Title"
-                Author="@review.Author"
-                Date="@review.Date"/>
+            var first = Reviews.First();
+
+            <ReviewOverview ImagePath="@first.ImagePath"
+                            Title="@first.Title"
+                            Author="@first.Author"
+                            Date="@first.Date"
+                            Excerpt="@first.Excerpt"
+                            IsFeatured="true"
+                            ReviewScore="@first.ReviewScore"
+                            OnClickCallback="() => NavigateToReview(first.Path)" />
         }
-        <ReviewOverview
-            ImagePath="assets/review_test.jpg" 
-            Title="Best Review"
-            Author="Mark Winch"
-            Date="18/10/2025"/>
-        <ReviewOverview
-            ImagePath="assets/review_test.jpg" 
-            Title="Best Review"
-            Author="Mark Winch"
-            Date="18/10/2025"/>
-        <ReviewOverview
-            ImagePath="assets/review_test.jpg" 
-            Title="Best Review"
-            Author="Mark Winch"
-            Date="18/10/2025"/>
-        <ReviewOverview
-            ImagePath="assets/review_test.jpg" 
-            Title="Best Review"
-            Author="Mark Winch"
-            Date="18/10/2025"/>
-        <ReviewOverview
-            ImagePath="assets/review_test.jpg" 
-            Title="Best Review"
-            Author="Mark Winch"
-            Date="18/10/2025"/>
-        <ReviewOverview
-            ImagePath="assets/review_test.jpg" 
-            Title="Best Review"
-            Author="Mark Winch"
-            Date="18/10/2025"/>
-    </div>
+        <h2 class="review-title">Featured Reviews</h2>
+        <div class="review-grid">
+            @foreach (var review in Reviews.Skip(1))
+            {
+                <ReviewOverview ImagePath="@review.ImagePath"
+                                Title="@review.Title"
+                                Author="@review.Author"
+                                Date="@review.Date"
+                                Excerpt="@review.Excerpt"
+                                IsFeatured="false"
+                                OnClickCallback="() => NavigateToReview(review.Path)" />
+            }
+        </div>
+    }
 </div>
 
 @code {
-    private List<Review> reviews = new List<Review>();
+    private Article[] Reviews;
 
     protected override async Task OnInitializedAsync()
     {
-        try 
-        {
-            var paths = Directory.GetFiles("content/reviews");
+        var reviewList = new List<Article>();
 
-            foreach(var path in paths) 
+        try
+        {
+            var indexes = await GetFromJsonAsync<ContentIndex[]>("content/index.json");
+            await JS.InvokeVoidAsync("console.log", $"paths are {indexes.Count()}");
+
+            foreach (var index in indexes.Take(7))
             {
-                string jsonContent = await File.ReadAllTextAsync(path);
-                var data = JsonSerializer.Deserialize<Review>(jsonContent);
-                reviews.Add(data);
+                var reviewData = await GetFromJsonAsync<Article>(index.Path);
+                reviewData.Path = index.Path;
+                await JS.InvokeVoidAsync("console.log", $"review data is {reviewData.Path}");
+
+                reviewList.Add(reviewData);
             }
         }
-        catch
+        catch (Exception ex)
         {
-            //dont crash
+            await JS.InvokeVoidAsync("console.log", $"review loading crashed with error {ex.Message}.");
         }
+        finally
+        {
+            Reviews = reviewList.ToArray();
+        }
+    }
+
+    public async Task<T> GetFromJsonAsync<T>(string requestUri)
+    {
+        using (var response = await Http.GetAsync(requestUri, HttpCompletionOption.ResponseHeadersRead))
+        {
+            var jsonResult = await response.Content.ReadFromJsonAsync<T>();
+
+            return jsonResult;
+        }
+    }
+
+    private void NavigateToReview(string path)
+    {
+        NavManager.NavigateTo($"/reviews/games/{Uri.EscapeDataString(path)}");
     }
 }

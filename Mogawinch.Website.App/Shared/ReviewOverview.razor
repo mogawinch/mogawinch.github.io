@@ -1,10 +1,17 @@
-﻿<div class="review-overview">
-    <img class="reviewImage" loading="lazy" src="@ImagePath"/>
-    <span class="reviewTitle">@Title</span>
-    <div class="review-secondary">
-        <span>@Author</span>
-        <span>@Date</span>
+﻿<div @onclick="HandleClick" class="review-overview @(IsFeatured ? "featured" : "")">
+    <img class="reviewImage" loading="lazy" src="@ImagePath" alt="@Title" />
+    <div class="review-content">
+        <h3 class="reviewTitle">@Title</h3>
+        <div class="review-secondary">
+            <span class="reviewAuthor">@Author</span>
+            <span class="reviewDate">@Date</span>
+        </div>
+        <p class="reviewExcerpt">@Excerpt</p>
     </div>
+@if (ReviewScore != null) 
+{
+    <div class="reviewScore @GetScoreClass(ReviewScore)">@ReviewScore</div>
+}
 </div>
 
 @code {
@@ -19,4 +26,28 @@
 
     [Parameter]
     public string Date { get; set; }
+
+    [Parameter]
+    public string Excerpt { get; set; }
+
+    [Parameter]
+    public int? ReviewScore { get; set; }
+
+    [Parameter] 
+    public bool IsFeatured { get; set; } = false;
+
+    [Parameter]
+    public EventCallback<MouseEventArgs> OnClickCallback { get; set; }
+
+    private async Task HandleClick(MouseEventArgs e)
+    {
+        await OnClickCallback.InvokeAsync(e);
+    }
+
+    private string GetScoreClass(int? score)
+    {
+        if (score <= 5) return "score-low";      // red
+        if (score <= 7) return "score-medium";   // yellow
+        return "score-high";                 // green
+    }
 }

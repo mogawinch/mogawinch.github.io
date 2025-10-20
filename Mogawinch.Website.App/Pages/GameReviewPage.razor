@@ -1,0 +1,98 @@
+﻿@page "/reviews/games/{Slug}"
+@using Mogawinch.Models
+@inject IJSRuntime JS
+@inject HttpClient Http
+
+<div class="review-page">
+
+@if (Review != null)
+{
+    <!-- Banner Image -->
+    <div class="review-banner">
+        <img src="@Review.ImagePath" alt="@Review.Title" />
+    </div>
+
+    <!-- Review Content -->
+    <div class="review-content">
+        <h1 class="review-page-title">@Review.Title</h1>
+
+        <!-- Author and Date -->
+        <div class="review-meta">
+            <span class="review-author">@Review.Author</span>
+            <span class="separator">•</span>
+            <span class="review-date">@Review.Date</span>
+        </div>
+        <!-- Paragraphs -->
+        @foreach (var reviewParagraph in Review.Paragraph.Select((value, index) => new { index, value }))
+        {
+            <p>@reviewParagraph.value</p>
+
+            @if (IsMiddleParagraph(Review, reviewParagraph.index))
+            {
+                <div class="review-middle-image">
+                    <img src="@Review.ImagePath" alt="Secondary Image" />
+                </div>
+            }
+        }
+
+        <!-- Notes Section -->
+        <div class="review-notes">
+            <h2>Review Summary</h2>
+            <div class="note-recap">
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h3>Good</h3>
+                        <ul>
+                            @foreach (var good in Review.GoodSummary)
+                            {
+                                <li>@good</li>
+                            }
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h3>Bad</h3>
+                        <ul>
+                            @foreach(var bad in Review.BadSummary)
+                            {
+                                <li>@bad</li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+                <div class="score score-high">
+                    @Review.ReviewScore
+                </div>
+            </div>
+        </div>
+    </div>
+}
+</div>
+
+@code {
+    [Parameter]
+    public string Slug { get; set; }
+
+    [Parameter]
+    public Article Review { get; set; }
+
+    private static bool IsMiddleParagraph(Article review, int index)
+    {
+        return index == (int)review.Paragraph.Count() / 2;
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await JS.InvokeVoidAsync("console.log", $"Opening Review {Slug}");
+        Review = await GetFromJsonAsync<Article>(Uri.UnescapeDataString(Slug));
+    }
+
+    public async Task<T> GetFromJsonAsync<T>(string requestUri)
+    {
+        using (var response = await Http.GetAsync(requestUri, HttpCompletionOption.ResponseHeadersRead))
+        {
+            var jsonResult = await response.Content.ReadFromJsonAsync<T>();
+
+            return jsonResult;
+        }
+    }
+}

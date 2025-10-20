@@ -1,0 +1,146 @@
+﻿@page "/reviews/games"
+@using Mogawinch.Models
+@using System.IO
+@using System.Text.Json
+
+@inject IJSRuntime JS
+@inject HttpClient Http
+@inject NavigationManager NavManager
+
+<div id="reviews-page">
+    @if (Reviews == null)
+    {
+        <p><em>Loading...</em></p>
+    }
+    else
+    {
+        <h2 class="review-title">All Game Reviews</h2>
+
+        <!-- 🔍 Search Bar -->
+        <div class="review-search">
+            <input type="text" placeholder="Search reviews..." @bind-value="searchQuery" @onkeyup="ApplySearch"/>
+        </div>
+
+        <div class="review-grid">
+            @foreach (var review in Reviews)
+            {
+                <ReviewOverview ImagePath="@review.ImagePath"
+                                Title="@review.Title"
+                                Author="@review.Author"
+                                Date="@review.Date"
+                                Excerpt="@review.Excerpt"
+                                IsFeatured="false"
+                                OnClickCallback="() => NavigateToReview(review.Path)" />
+            }
+        </div>
+
+        <div class="pagination">
+            <button @onclick="PrevPage" disabled="@(_currentPage == 1)">‹ Prev</button>
+            <span>Page @_currentPage of @_totalPages</span>
+            <button @onclick="NextPage" disabled="@(_currentPage == _totalPages)">Next ›</button>
+        </div>
+    }
+</div>
+
+@code {
+    [Parameter]
+    [SupplyParameterFromQuery(Name = "search")]
+    public string Search { get; set; }
+    private Article[] Reviews;
+    private ContentIndex[] Indexes;
+    private string searchQuery = "";
+    private int _currentPage = 1;
+    private int _pageSize = 6;
+    private int _totalPages => Math.Max((int)Math.Ceiling((double)Indexes.Count() / _pageSize), 1);
+
+    protected override async Task OnInitializedAsync()
+    {
+        var reviewList = new List<Article>();
+
+        try
+        {
+            Indexes = await GetFromJsonAsync<ContentIndex[]>("content/index.json");
+            await JS.InvokeVoidAsync("console.log", $"indexes contains {Indexes.Count()}");
+
+            if (!string.IsNullOrEmpty(Search))
+            {
+                await JS.InvokeVoidAsync("console.log", $"search is {Search}");
+                searchQuery = Search;
+                Indexes = Indexes.Where(i => i.Title.Contains(Search, StringComparison.OrdinalIgnoreCase)).ToArray();
+            }
+
+            Indexes = Indexes.Where(i => i.Path.Contains("content/reviews/games")).ToArray();;
+            await JS.InvokeVoidAsync("console.log", $"review indexes contains {Indexes.Count()}");
+
+            var numberToSkip = (_currentPage - 1) * _pageSize;
+            foreach (var index in Indexes.Skip(numberToSkip).Take(_pageSize))
+            {
+                var reviewData = await GetFromJsonAsync<Article>(index.Path);
+                reviewData.Path = index.Path;
+                await JS.InvokeVoidAsync("console.log", $"review data is {reviewData.Path}");
+
+                reviewList.Add(reviewData);
+            }
+        }
+        catch (Exception ex)
+        {
+            await JS.InvokeVoidAsync("console.log", $"review loading crashed with error {ex.Message}.");
+        }
+        finally
+        {
+            Reviews = reviewList.ToArray();
+        }
+    }
+
+    public async Task<T> GetFromJsonAsync<T>(string requestUri)
+    {
+        using (var response = await Http.GetAsync(requestUri, HttpCompletionOption.ResponseHeadersRead))
+        {
+            var jsonResult = await response.Content.ReadFromJsonAsync<T>();
+
+            return jsonResult;
+        }
+    }
+
+    private void NavigateToReview(string path)
+    {
+        NavManager.NavigateTo($"/reviews/games/{Uri.EscapeDataString(path)}");
+    }
+
+    private void ApplySearch(KeyboardEventArgs eventArgs)
+    {
+        if (eventArgs.Key == "Enter")
+        {
+            if (!string.IsNullOrEmpty(searchQuery))
+            {
+                NavManager.NavigateTo($"/reviews/games?search={searchQuery}", forceLoad: true);
+            }
+            else
+            {
+                NavManager.NavigateTo($"/reviews/games", forceLoad: true);
+            }
+
+            _currentPage = 1; // reset to first page on search
+        }
+    }
+
+    private async Task PrevPage()
+    {
+        if (_currentPage > 1)
+        {
+            _currentPage--;
+            await OnInitializedAsync();
+            await JS.InvokeVoidAsync("blazorScroll.resetScroll");
+        }
+    }
+
+    private async Task NextPage()
+    {
+        if (_currentPage < _totalPages)
+        {
+            _currentPage++;
+            await OnInitializedAsync();
+            await JS.InvokeVoidAsync("blazorScroll.resetScroll");
+        }
+    }
+}
