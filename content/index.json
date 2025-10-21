@@ -1,8 +1,12 @@
 [
-    { "Path": "content/reviews/6.json" },
-    { "Path": "content/reviews/5.json" },
-    { "Path": "content/reviews/4.json" },
-    { "Path": "content/reviews/3.json" },
-    { "Path": "content/reviews/2.json" },
-    { "Path": "content/reviews/1.json" }
+    { "Path": "content/reviews/games/10.json" },
+    { "Path": "content/reviews/games/9.json" },
+    { "Path": "content/reviews/games/8.json" },
+    { "Path": "content/reviews/games/7.json" },
+    { "Path": "content/reviews/games/6.json" },
+    { "Path": "content/reviews/games/5.json" },
+    { "Path": "content/reviews/games/4.json" },
+    { "Path": "content/reviews/games/3.json" },
+    { "Path": "content/reviews/games/2.json" },
+    { "Path": "content/reviews/games/1.json" }
 ]

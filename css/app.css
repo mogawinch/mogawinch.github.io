@@ -51,6 +51,6 @@ a, .btn-link {
 
 @media (max-width: 641px) {
     body {
-        padding-bottom: 5rem; /* space for the bottom toolbar */
+        padding-bottom: 3rem; /* space for the bottom toolbar */
     }
 }

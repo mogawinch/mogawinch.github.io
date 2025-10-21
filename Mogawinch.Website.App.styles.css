@@ -1,3 +1,176 @@
+/* /Pages/GameReviewPage.razor.rz.scp.css */
+/* Review Page Container */
+.review-page[b-m41vtpiveo] {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Banner Image */
+.review-banner img[b-m41vtpiveo] {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Review Title */
+.review-page-title[b-m41vtpiveo] {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+/* Paragraphs */
+.review-content p[b-m41vtpiveo] {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 1rem;
+}
+
+/* Notes Section */
+.review-notes[b-m41vtpiveo] {
+    background: linear-gradient(
+        135deg,
+        darkslategrey 0%,
+        #2c2c44 100%
+    );
+    color: #fff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+    .review-notes h2[b-m41vtpiveo] {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+/* Pros / Cons Layout */
+.note-recap[b-m41vtpiveo] {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.pros-cons[b-m41vtpiveo] {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    position: relative;
+}
+
+/* Vertical separator line */
+.pros-cons[b-m41vtpiveo]::after {
+    content: "";
+    position: absolute;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    left: 50%;
+    width: 1px;
+    background-color: rgba(255,255,255,0.2); /* subtle light line */
+    transform: translateX(-50%);
+}
+
+/* Ensure pros and cons columns take equal width */
+.pros[b-m41vtpiveo], .cons[b-m41vtpiveo] {
+    flex: 1;
+    padding: 0 1rem;
+}
+
+    .pros h3[b-m41vtpiveo], .cons h3[b-m41vtpiveo] {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .pros ul[b-m41vtpiveo], .cons ul[b-m41vtpiveo] {
+        list-style: disc inside;
+    }
+
+/* Score */
+.score[b-m41vtpiveo] {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #fff;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+}
+
+/* Color-coded based on score */
+.score-low[b-m41vtpiveo] { background-color: #e74c3c; }   /* red */
+.score-medium[b-m41vtpiveo] { background-color: #f1c40f; color: #000; }  /* yellow */
+.score-high[b-m41vtpiveo] { background-color: #2ecc71; }
+
+.review-meta[b-m41vtpiveo] {
+    font-size: 0.9rem;
+    opacity: 0.9; /* slightly darker */
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.review-author[b-m41vtpiveo] {
+    font-weight: 500;
+    color: #888; /* darker, subtle tone */
+}
+
+.review-date[b-m41vtpiveo] {
+    color: #777; /* slightly darker than before */
+}
+
+.separator[b-m41vtpiveo] {
+    color: #666; /* darker dot */
+}
+
+.review-middle-image[b-m41vtpiveo] {
+    width: 100%;
+    margin: 1.5rem 0; /* spacing above and below */
+    text-align: center;
+}
+
+.review-middle-image img[b-m41vtpiveo] {
+    width: 80%;          /* smaller than full width */
+    max-width: 500px;    /* prevent it from getting too large on desktop */
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2); /* lighter shadow than main banner */
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;      /* center the image */
+}
+
+/* Responsive for Mobile */
+@media (max-width: 640px) {
+    .pros-cons[b-m41vtpiveo] {
+        flex-direction: column;
+    }
+
+    .pros-cons[b-m41vtpiveo]::after {
+        display: none;
+    }
+
+    .pros[b-m41vtpiveo], .cons[b-m41vtpiveo] {
+        padding: 0;
+    }
+
+    .review-middle-image img[b-m41vtpiveo] {
+        width: 95%;       /* almost full width on small screens */
+        max-width: unset; /* allow flexibility */
+        height: auto;
+    }
+}
 /* /Pages/Index.razor.rz.scp.css */
 .home-banner[b-vbo520ba11] {
     background-color: #f4f4f4;
@@ -21,7 +194,7 @@
     font-weight: 500;
     color: #666;
     margin: 0 auto 10px;
-    padding: 0 2rem; /* same lateral padding as the grid */
+    padding: 3rem 2rem 0 2rem; /* same lateral padding as the grid */
     max-width: 1300px; /* same width as .review-grid container */
     box-sizing: border-box;
     text-align: left; /* align text with the grid columns */
@@ -42,179 +215,6 @@
     .review-grid[b-vbo520ba11] {
         grid-template-columns: 1fr;
         max-width: 600px; /* prevent card from being too wide on mobile */
-    }
-}
-/* /Pages/ReviewPage.razor.rz.scp.css */
-/* Review Page Container */
-.review-page[b-yevk4dvs2p] {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-/* Banner Image */
-.review-banner img[b-yevk4dvs2p] {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-}
-
-/* Review Title */
-.review-page-title[b-yevk4dvs2p] {
-    font-size: 2rem;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 1rem;
-}
-
-/* Paragraphs */
-.review-content p[b-yevk4dvs2p] {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #444;
-    margin-bottom: 1rem;
-}
-
-/* Notes Section */
-.review-notes[b-yevk4dvs2p] {
-    background: linear-gradient(
-        135deg,
-        darkslategrey 0%,
-        #2c2c44 100%
-    );
-    color: #fff;
-    border-radius: 12px;
-    padding: 1.5rem;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-}
-
-    .review-notes h2[b-yevk4dvs2p] {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-    }
-
-/* Pros / Cons Layout */
-.note-recap[b-yevk4dvs2p] {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.pros-cons[b-yevk4dvs2p] {
-    display: flex;
-    justify-content: space-between;
-    gap: 2rem;
-    position: relative;
-}
-
-/* Vertical separator line */
-.pros-cons[b-yevk4dvs2p]::after {
-    content: "";
-    position: absolute;
-    top: 0.5rem;
-    bottom: 0.5rem;
-    left: 50%;
-    width: 1px;
-    background-color: rgba(255,255,255,0.2); /* subtle light line */
-    transform: translateX(-50%);
-}
-
-/* Ensure pros and cons columns take equal width */
-.pros[b-yevk4dvs2p], .cons[b-yevk4dvs2p] {
-    flex: 1;
-    padding: 0 1rem;
-}
-
-    .pros h3[b-yevk4dvs2p], .cons h3[b-yevk4dvs2p] {
-        font-size: 1.2rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .pros ul[b-yevk4dvs2p], .cons ul[b-yevk4dvs2p] {
-        list-style: disc inside;
-    }
-
-/* Score */
-.score[b-yevk4dvs2p] {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 1.2rem;
-    color: #fff;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
-}
-
-/* Color-coded based on score */
-.score-low[b-yevk4dvs2p] { background-color: #e74c3c; }   /* red */
-.score-medium[b-yevk4dvs2p] { background-color: #f1c40f; color: #000; }  /* yellow */
-.score-high[b-yevk4dvs2p] { background-color: #2ecc71; }
-
-.review-meta[b-yevk4dvs2p] {
-    font-size: 0.9rem;
-    opacity: 0.9; /* slightly darker */
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-}
-
-.review-author[b-yevk4dvs2p] {
-    font-weight: 500;
-    color: #888; /* darker, subtle tone */
-}
-
-.review-date[b-yevk4dvs2p] {
-    color: #777; /* slightly darker than before */
-}
-
-.separator[b-yevk4dvs2p] {
-    color: #666; /* darker dot */
-}
-
-.review-middle-image[b-yevk4dvs2p] {
-    width: 100%;
-    margin: 1.5rem 0; /* spacing above and below */
-    text-align: center;
-}
-
-.review-middle-image img[b-yevk4dvs2p] {
-    width: 80%;          /* smaller than full width */
-    max-width: 500px;    /* prevent it from getting too large on desktop */
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.2); /* lighter shadow than main banner */
-    object-fit: cover;
-    display: block;
-    margin: 0 auto;      /* center the image */
-}
-
-/* Responsive for Mobile */
-@media (max-width: 640px) {
-    .pros-cons[b-yevk4dvs2p] {
-        flex-direction: column;
-    }
-
-    .pros-cons[b-yevk4dvs2p]::after {
-        display: none;
-    }
-
-    .pros[b-yevk4dvs2p], .cons[b-yevk4dvs2p] {
-        padding: 0;
-    }
-
-    .review-middle-image img[b-yevk4dvs2p] {
-        width: 95%;       /* almost full width on small screens */
-        max-width: unset; /* allow flexibility */
-        height: auto;
     }
 }
 /* /Shared/MainLayout.razor.rz.scp.css */
@@ -328,6 +328,93 @@
             margin-left: 8px;
             height: 24px;
         }
+}
+
+/* --- Footer --- */
+.site-footer[b-xxmk50sjkk] {
+    background-color: #f9f9f9;
+    color: #333;
+    font-size: 0.9rem;
+    border-top: 1px solid #ddd;
+    padding: 1.2rem 0;
+    margin-top: 2rem;
+}
+
+    .site-footer hr[b-xxmk50sjkk] {
+        border: none;
+        border-top: 1px solid #e0e0e0;
+        margin-bottom: 1rem;
+        width: 100%;
+    }
+
+.footer-content[b-xxmk50sjkk] {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.footer-logo[b-xxmk50sjkk] {
+    width: 80px;
+    height: auto;
+    opacity: 0.9;
+}
+
+.footer-links[b-xxmk50sjkk] {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+    .footer-links a[b-xxmk50sjkk] {
+        color: #333;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+
+        .footer-links a:hover[b-xxmk50sjkk] {
+            color: #c00; /* red highlight like IGN */
+        }
+
+/* --- Mobile --- */
+@media (max-width: 640px) {
+    .footer-content[b-xxmk50sjkk] {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .footer-logo[b-xxmk50sjkk] {
+        margin-bottom: 0.5rem;
+        width: 70px;
+    }
+
+    .footer-links[b-xxmk50sjkk] {
+        font-size: 0.85rem;
+        text-align: center;
+    }
+}
+
+/* --- Desktop compact mode --- */
+@media (min-width: 1024px) {
+    .site-footer[b-xxmk50sjkk] {
+        padding: 0.6rem 0; /* smaller vertical space */
+    }
+
+    .footer-logo[b-xxmk50sjkk] {
+        width: 60px; /* smaller logo */
+    }
+
+    .footer-links[b-xxmk50sjkk] {
+        font-size: 0.85rem;
+        gap: 0.4rem;
+    }
 }
 /* /Shared/Maintenance.razor.rz.scp.css */
 .maintenance[b-1aooooza0j] {
