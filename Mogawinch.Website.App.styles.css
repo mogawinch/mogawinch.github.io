@@ -527,6 +527,58 @@
         display: block;
     }
 }
+
+/* Collapsible REVIEWS button */
+.nav-collapse[b-zlikp0xd1t] {
+    background: none;
+    border: none;
+    color: #d7d7d7;
+    width: 100%;
+    text-align: left;
+    font-weight: normal;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 4px;
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+    /* Hover and active states match NavLink */
+    .nav-collapse:hover[b-zlikp0xd1t] {
+        background-color: rgba(255,255,255,0.1);
+        color: #fff;
+    }
+
+/* Arrow styling */
+.arrow[b-zlikp0xd1t] {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    margin-left: auto;
+}
+
+/* Submenu styling */
+.submenu[b-zlikp0xd1t] {
+    border-left: 2px solid rgba(255,255,255,0.15);
+    margin: 0.25rem 0 0.5rem 0.5rem;
+    padding-left: 0.75rem;
+}
+
+.submenu-link[b-zlikp0xd1t] {
+    font-size: 0.9rem;
+    color: #bdbdbd !important;
+    display: block;
+    padding: 0.3rem 0;
+    transition: color 0.2s ease;
+}
+
+    .submenu-link:hover[b-zlikp0xd1t],
+    .submenu-link.active[b-zlikp0xd1t] {
+        color: #fff !important;
+    }
 /* /Shared/ReviewOverview.razor.rz.scp.css */
 .review-overview[b-1srkehvyqx] {
     width: 100%;
@@ -703,10 +755,10 @@
 /* Mobile adjustments */
 @media (max-width: 641px) {
     .review-overview.featured .reviewScore[b-1srkehvyqx] {
-        top: 0.8rem;          /* a little closer to top */
-        left: 0.8rem;         /* a little closer to left */
-        width: 50px;           /* smaller circle */
-        height: 50px;
+        top: 0.5rem;          /* a little closer to top */
+        left: 0.5rem;         /* a little closer to left */
+        width: 40px;           /* smaller circle */
+        height: 40px;
         font-size: 1.2rem;     /* smaller number */
     }
 
