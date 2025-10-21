@@ -158,6 +158,45 @@
 .score-medium[b-yevk4dvs2p] { background-color: #f1c40f; color: #000; }  /* yellow */
 .score-high[b-yevk4dvs2p] { background-color: #2ecc71; }
 
+.review-meta[b-yevk4dvs2p] {
+    font-size: 0.9rem;
+    opacity: 0.9; /* slightly darker */
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.review-author[b-yevk4dvs2p] {
+    font-weight: 500;
+    color: #888; /* darker, subtle tone */
+}
+
+.review-date[b-yevk4dvs2p] {
+    color: #777; /* slightly darker than before */
+}
+
+.separator[b-yevk4dvs2p] {
+    color: #666; /* darker dot */
+}
+
+.review-middle-image[b-yevk4dvs2p] {
+    width: 100%;
+    margin: 1.5rem 0; /* spacing above and below */
+    text-align: center;
+}
+
+.review-middle-image img[b-yevk4dvs2p] {
+    width: 80%;          /* smaller than full width */
+    max-width: 500px;    /* prevent it from getting too large on desktop */
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2); /* lighter shadow than main banner */
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;      /* center the image */
+}
+
 /* Responsive for Mobile */
 @media (max-width: 640px) {
     .pros-cons[b-yevk4dvs2p] {
@@ -170,6 +209,12 @@
 
     .pros[b-yevk4dvs2p], .cons[b-yevk4dvs2p] {
         padding: 0;
+    }
+
+    .review-middle-image img[b-yevk4dvs2p] {
+        width: 95%;       /* almost full width on small screens */
+        max-width: unset; /* allow flexibility */
+        height: auto;
     }
 }
 /* /Shared/MainLayout.razor.rz.scp.css */
