@@ -171,6 +171,62 @@
         height: auto;
     }
 }
+/* /Pages/GameReviewsPage.razor.rz.scp.css */
+/* Align the title to the same content width as the grid */
+.review-title[b-271ycuxzqn] {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #666;
+    margin: 0 auto 10px;
+    padding: 3rem 2rem 0 2rem; /* same lateral padding as the grid */
+    max-width: 1300px; /* same width as .review-grid container */
+    box-sizing: border-box;
+    text-align: left; /* align text with the grid columns */
+}
+
+.review-grid[b-271ycuxzqn] {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(300px, 1fr)); /* Two cards per row, cards expand up to 1fr each */
+    gap: 2rem;
+    padding: 2rem;
+    justify-items: center;
+    max-width: 1300px; /* limit total grid width */
+    margin: 0 auto; /* center the grid on the page */
+}
+
+/* Mobile layout: 1 card per row */
+@media (max-width: 641px) {
+    .review-grid[b-271ycuxzqn] {
+        grid-template-columns: 1fr;
+        max-width: 600px; /* prevent card from being too wide on mobile */
+    }
+}
+
+.review-search[b-271ycuxzqn] {
+    display: flex;
+    justify-content: center;
+    margin: 1rem auto 2rem;
+    max-width: 600px;
+    padding: 0 2rem;
+}
+
+    .review-search input[b-271ycuxzqn] {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-size: 1rem;
+        transition: all 0.2s ease;
+        background-color: #f8f8f8;
+        color: #333;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+        .review-search input:focus[b-271ycuxzqn] {
+            outline: none;
+            border-color: #888;
+            box-shadow: 0 0 6px rgba(0,0,0,0.1);
+        }
 /* /Pages/Index.razor.rz.scp.css */
 .home-banner[b-vbo520ba11] {
     background-color: #f4f4f4;
