@@ -128,12 +128,12 @@
 
     private void NavigateToGameReview(string path)
     {
-        NavManager.NavigateTo($"/reviews/games/{Uri.EscapeDataString(path)}");
+        NavManager.NavigateTo($"/reviews/games/{Article.Base64Encode(path)}");
     }
 
     private void NavigateToBlogPost(string path)
     {
-        NavManager.NavigateTo($"/blogs/{Uri.EscapeDataString(path)}");
+        NavManager.NavigateTo($"/blogs/{Article.Base64Encode(path)}");
     }
 
     private void NavigateToAllGameReviews()

@@ -83,7 +83,7 @@
     protected override async Task OnInitializedAsync()
     {
         await JS.InvokeVoidAsync("console.log", $"Opening Review {Slug}");
-        Review = await GetFromJsonAsync<Article>(Uri.UnescapeDataString(Slug));
+        Review = await GetFromJsonAsync<Article>(Article.Base64Decode(Slug));
     }
 
     public async Task<T> GetFromJsonAsync<T>(string requestUri)

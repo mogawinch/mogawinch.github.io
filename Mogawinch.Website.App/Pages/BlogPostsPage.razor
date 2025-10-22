@@ -104,7 +104,7 @@
 
     private void NavigateToBlog(string path)
     {
-        NavManager.NavigateTo($"/blogs/{Uri.EscapeDataString(path)}");
+        NavManager.NavigateTo($"/blogs/{Article.Base64Encode(path)}");
     }
 
     private void ApplySearch(KeyboardEventArgs eventArgs)

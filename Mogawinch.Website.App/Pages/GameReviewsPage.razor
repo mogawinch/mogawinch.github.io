@@ -104,7 +104,7 @@
 
     private void NavigateToReview(string path)
     {
-        NavManager.NavigateTo($"/reviews/games/{Uri.EscapeDataString(path)}");
+        NavManager.NavigateTo($"/reviews/games/{Article.Base64Encode(path)}");
     }
 
     private void ApplySearch(KeyboardEventArgs eventArgs)
