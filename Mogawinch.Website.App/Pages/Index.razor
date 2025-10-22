@@ -18,27 +18,53 @@
         {
             var first = Reviews.First();
 
-            <ReviewOverview ImagePath="@first.ImagePath"
+            <ArticleOverview ImagePath="@first.ImagePath"
                             Title="@first.Title"
                             Author="@first.Author"
                             Date="@first.Date"
                             Excerpt="@first.Excerpt"
                             IsFeatured="true"
                             ReviewScore="@first.ReviewScore"
-                            OnClickCallback="() => NavigateToReview(first.Path)" />
+                            OnClickCallback="() => NavigateToGameReview(first.Path)" />
         }
-        <h2 class="review-title">Featured Reviews</h2>
-        <div class="review-grid">
+        <h2 class="article-title">Featured Games</h2>
+        <div class="article-grid">
             @foreach (var review in Reviews.Skip(1))
             {
-                <ReviewOverview ImagePath="@review.ImagePath"
+                <ArticleOverview ImagePath="@review.ImagePath"
                                 Title="@review.Title"
                                 Author="@review.Author"
                                 Date="@review.Date"
                                 Excerpt="@review.Excerpt"
                                 IsFeatured="false"
-                                OnClickCallback="() => NavigateToReview(review.Path)" />
+                                OnClickCallback="() => NavigateToGameReview(review.Path)" />
             }
+        </div>
+
+        <div class="more-articles-container">
+            <button class="more-articles-button" @onclick="NavigateToAllGameReviews">
+                More Game Reviews →
+            </button>
+        </div>
+
+        <h2 class="article-title">Featured Blogs</h2>
+        <div class="article-grid">
+            @foreach (var blog in Blogs)
+            {
+                <ArticleOverview ImagePath="@blog.ImagePath"
+                                Title="@blog.Title"
+                                Author="@blog.Author"
+                                Date="@blog.Date"
+                                Excerpt="@blog.Excerpt"
+                                IsFeatured="false"
+                                OnClickCallback="() => NavigateToBlogPost(blog.Path)" />
+            }
+        </div>
+
+        <div class="more-articles-container">
+            <button class="more-articles-button" @onclick="NavigateToAllBlogPosts">
+                More Blog Posts →
+            </button>
         </div>
     }
 </div>
@@ -46,22 +72,37 @@
 @code {
     private Article[] Reviews;
 
+    private Article[] Blogs;
+
     protected override async Task OnInitializedAsync()
     {
         var reviewList = new List<Article>();
+        var blogList = new List<Article>();
 
         try
         {
             var indexes = await GetFromJsonAsync<ContentIndex[]>("content/index.json");
             await JS.InvokeVoidAsync("console.log", $"paths are {indexes.Count()}");
 
-            foreach (var index in indexes.Take(7))
+            var reviewIndexes = indexes.Where(i => i.Path.Contains("content/reviews/games")).Take(7);
+            var blogIndexes = indexes.Where(i => i.Path.Contains("content/blogs")).Take(7);
+
+            foreach (var index in reviewIndexes)
             {
                 var reviewData = await GetFromJsonAsync<Article>(index.Path);
                 reviewData.Path = index.Path;
                 await JS.InvokeVoidAsync("console.log", $"review data is {reviewData.Path}");
 
                 reviewList.Add(reviewData);
+            }
+
+            foreach (var index in blogIndexes)
+            {
+                var blogData = await GetFromJsonAsync<Article>(index.Path);
+                blogData.Path = index.Path;
+                await JS.InvokeVoidAsync("console.log", $"review data is {blogData.Path}");
+
+                blogList.Add(blogData);
             }
         }
         catch (Exception ex)
@@ -71,6 +112,7 @@
         finally
         {
             Reviews = reviewList.ToArray();
+            Blogs = blogList.ToArray();
         }
     }
 
@@ -84,8 +126,23 @@
         }
     }
 
-    private void NavigateToReview(string path)
+    private void NavigateToGameReview(string path)
     {
         NavManager.NavigateTo($"/reviews/games/{Uri.EscapeDataString(path)}");
+    }
+
+    private void NavigateToBlogPost(string path)
+    {
+        NavManager.NavigateTo($"/blogs/{Uri.EscapeDataString(path)}");
+    }
+
+    private void NavigateToAllGameReviews()
+    {
+        NavManager.NavigateTo("/reviews/games");
+    }
+
+    private void NavigateToAllBlogPosts()
+    {
+        NavManager.NavigateTo("/blogs");
     }
 }

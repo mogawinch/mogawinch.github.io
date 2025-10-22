@@ -1,16 +1,38 @@
 ﻿@page "/about"
 
-<h1>Counter</h1>
+<div id="about-page">
+    <h2 class="about-title">About Mogawinch HQ</h2>
 
-<p>Current count: @currentCount</p>
+    <section class="about-section">
+        <p>
+            Welcome to <strong>Mogawinch HQ</strong>, a site dedicated to thoughtful, honest, and down-to-earth video game reviews.
+            Our goal is to help players discover games that truly deserve their time and money.
+        </p>
+        <p>
+            Unlike traditional reviews that focus purely on technical or graphical fidelity, we place our emphasis on 
+            <strong>the value a game provides for its market price</strong>. Whether it’s a small indie gem or a massive AAA release,
+            we evaluate how well the experience, gameplay depth, and content justify its cost.
+            Each score reflects the overall quality of a game relative to its price with a 10 representing an outstanding experience 
+            that offers exceptional value.
+        </p>
+    </section>
 
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+    <h3 class="about-subtitle">Our Writers</h3>
+    <div class="writer-grid">
+        <div class="writer-card">
+            <img src="/assets/writers/markwinch.jpg" alt="Mark Winch" class="writer-photo">
+            <h4 class="writer-name">Mark Winch</h4>
+            <p class="writer-role">Founder & Main Writer</p>
+            <p class="writer-desc">
+                Mark has worked in the video game industry for several years, primarily at Ubisoft, where he developed a strong 
+                understanding of how games are designed and produced. A lifelong gamer across both PC and consoles, his reviews 
+                focus on honesty, clarity, and how much <em>value</em> a game truly delivers for its market price.  
+                <br><br>
+                To maintain transparency and avoid conflicts of interest, Mark does not review Ubisoft titles.
+            </p>
+        </div>
+    </div>
+</div>
 
 @code {
-    private int currentCount = 0;
-
-    private void IncrementCount()
-    {
-        currentCount++;
-    }
 }

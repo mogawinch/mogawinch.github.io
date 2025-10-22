@@ -1,4 +1,4 @@
-﻿@page "/reviews/games"
+﻿@page "/blogs"
 @using Mogawinch.Models
 @using System.IO
 @using System.Text.Json
@@ -7,30 +7,30 @@
 @inject HttpClient Http
 @inject NavigationManager NavManager
 
-<div id="reviews-page">
-    @if (Reviews == null)
+<div id="blogs-page">
+    @if (Blogs == null)
     {
         <p><em>Loading...</em></p>
     }
     else
     {
-        <h2 class="review-title">All Game Reviews</h2>
+        <h2 class="blog-title">All Blog Posts</h2>
 
         <!-- 🔍 Search Bar -->
-        <div class="review-search">
-            <input type="text" placeholder="Search reviews..." @bind-value="searchQuery" @onkeyup="ApplySearch"/>
+        <div class="blog-search">
+            <input type="text" placeholder="Search blogs..." @bind-value="searchQuery" @onkeyup="ApplySearch"/>
         </div>
 
-        <div class="review-grid">
-            @foreach (var review in Reviews)
+        <div class="blog-grid">
+            @foreach (var blog in Blogs)
             {
-                <ArticleOverview ImagePath="@review.ImagePath"
-                                Title="@review.Title"
-                                Author="@review.Author"
-                                Date="@review.Date"
-                                Excerpt="@review.Excerpt"
+                <ArticleOverview ImagePath="@blog.ImagePath"
+                                Title="@blog.Title"
+                                Author="@blog.Author"
+                                Date="@blog.Date"
+                                Excerpt="@blog.Excerpt"
                                 IsFeatured="false"
-                                OnClickCallback="() => NavigateToReview(review.Path)" />
+                                OnClickCallback="() => NavigateToBlog(blog.Path)" />
             }
         </div>
 
@@ -46,7 +46,7 @@
     [Parameter]
     [SupplyParameterFromQuery(Name = "search")]
     public string Search { get; set; }
-    private Article[] Reviews;
+    private Article[] Blogs;
     private ContentIndex[] Indexes;
     private string searchQuery = "";
     private int _currentPage = 1;
@@ -55,7 +55,7 @@
 
     protected override async Task OnInitializedAsync()
     {
-        var reviewList = new List<Article>();
+        var blogList = new List<Article>();
 
         try
         {
@@ -69,26 +69,26 @@
                 Indexes = Indexes.Where(i => i.Title.Contains(Search, StringComparison.OrdinalIgnoreCase)).ToArray();
             }
 
-            Indexes = Indexes.Where(i => i.Path.Contains("content/reviews/games")).ToArray();;
-            await JS.InvokeVoidAsync("console.log", $"review indexes contains {Indexes.Count()}");
+            Indexes = Indexes.Where(i => i.Path.Contains("content/blogs")).ToArray();;
+            await JS.InvokeVoidAsync("console.log", $"blog indexes contains {Indexes.Count()}");
 
             var numberToSkip = (_currentPage - 1) * _pageSize;
             foreach (var index in Indexes.Skip(numberToSkip).Take(_pageSize))
             {
-                var reviewData = await GetFromJsonAsync<Article>(index.Path);
-                reviewData.Path = index.Path;
-                await JS.InvokeVoidAsync("console.log", $"review data is {reviewData.Path}");
+                var blogData = await GetFromJsonAsync<Article>(index.Path);
+                blogData.Path = index.Path;
+                await JS.InvokeVoidAsync("console.log", $"blog data is {blogData.Path}");
 
-                reviewList.Add(reviewData);
+                blogList.Add(blogData);
             }
         }
         catch (Exception ex)
         {
-            await JS.InvokeVoidAsync("console.log", $"review loading crashed with error {ex.Message}.");
+            await JS.InvokeVoidAsync("console.log", $"blog loading crashed with error {ex.Message}.");
         }
         finally
         {
-            Reviews = reviewList.ToArray();
+            Blogs = blogList.ToArray();
         }
     }
 
@@ -102,9 +102,9 @@
         }
     }
 
-    private void NavigateToReview(string path)
+    private void NavigateToBlog(string path)
     {
-        NavManager.NavigateTo($"/reviews/games/{Uri.EscapeDataString(path)}");
+        NavManager.NavigateTo($"/blogs/{Uri.EscapeDataString(path)}");
     }
 
     private void ApplySearch(KeyboardEventArgs eventArgs)
@@ -113,11 +113,11 @@
         {
             if (!string.IsNullOrEmpty(searchQuery))
             {
-                NavManager.NavigateTo($"/reviews/games?search={searchQuery}", forceLoad: true);
+                NavManager.NavigateTo($"/blogs?search={searchQuery}", forceLoad: true);
             }
             else
             {
-                NavManager.NavigateTo($"/reviews/games", forceLoad: true);
+                NavManager.NavigateTo($"/blogs", forceLoad: true);
             }
 
             _currentPage = 1; // reset to first page on search

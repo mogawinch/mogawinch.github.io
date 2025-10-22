@@ -9,24 +9,24 @@
 
 .featured-container {
     width: 100%;
-    max-width: 1300px; /* same as review-grid width */
+    max-width: 1300px; /* same as article-grid width */
     margin: 0 auto 2.5rem auto; /* centers and adds bottom spacing */
     display: block;
 }
 
 /* Align the title to the same content width as the grid */
-.review-title {
+.article-title {
     font-size: 2rem;
     font-weight: 500;
     color: #666;
     margin: 0 auto 10px;
     padding: 3rem 2rem 0 2rem; /* same lateral padding as the grid */
-    max-width: 1300px; /* same width as .review-grid container */
+    max-width: 1300px; /* same width as .article-grid container */
     box-sizing: border-box;
     text-align: left; /* align text with the grid columns */
 }
 
-.review-grid {
+.article-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(300px, 1fr)); /* Two cards per row, cards expand up to 1fr each */
     gap: 2rem;
@@ -36,10 +36,45 @@
     margin: 0 auto; /* center the grid on the page */
 }
 
-/* Mobile layout: 1 card per row */
+.more-articles-container {
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem 0 1rem;
+}
+
+.more-articles-button {
+    background-color: #2a2a3d;
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1.4rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+}
+
+.more-articles-button:hover {
+    background-color: #3b3b57;
+    transform: translateY(-1px);
+    box-shadow: 0 5px 12px rgba(0,0,0,0.35);
+}
+
+/* Mobile spacing */
 @media (max-width: 641px) {
-    .review-grid {
+    .article-grid {
         grid-template-columns: 1fr;
         max-width: 600px; /* prevent card from being too wide on mobile */
+    }
+
+    .more-articles-container {
+        margin: 1rem 0 2rem;
+    }
+
+    .more-articles-button {
+        width: 80%;
+        font-size: 0.95rem;
+        padding: 0.6rem 0;
     }
 }

@@ -18,9 +18,10 @@
     justify-self: end;
 }
 
-.social-media > img {
+.social-media img {
     object-fit: cover;
     margin-left: 10px;
+    height: 25px; /* keep original height */
 }
 
 .top-row {
@@ -34,7 +35,6 @@
 
     .top-row ::deep a, .top-row .btn-link {
         white-space: nowrap;
-        margin-left: 1.5rem;
     }
 
     .top-row a:first-child {

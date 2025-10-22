@@ -1,0 +1,68 @@
+﻿@page "/blogs/{Slug}"
+@using Mogawinch.Models
+@inject IJSRuntime JS
+@inject HttpClient Http
+
+<div class="blog-page">
+
+@if (Blog != null)
+{
+    <!-- Banner Image -->
+    <div class="blog-banner">
+        <img src="@Blog.ImagePath" alt="@Blog.Title" />
+    </div>
+
+    <!-- Blog Content -->
+    <div class="blog-content">
+        <h1 class="blog-page-title">@Blog.Title</h1>
+
+        <!-- Author and Date -->
+        <div class="blog-meta">
+            <span class="blog-author">@Blog.Author</span>
+            <span class="separator">•</span>
+            <span class="blog-date">@Blog.Date</span>
+        </div>
+        <!-- Paragraphs -->
+        @foreach (var blogParagraph in Blog.Paragraph.Select((value, index) => new { index, value }))
+        {
+            <p>@blogParagraph.value</p>
+
+            @if (IsMiddleParagraph(Blog, blogParagraph.index))
+            {
+                <div class="blog-middle-image">
+                    <img src="@Blog.ImagePath" alt="Secondary Image" />
+                </div>
+            }
+        }
+    </div>
+}
+</div>
+
+@code {
+    [Parameter]
+    public string Slug { get; set; }
+
+    [Parameter]
+    public Article Blog { get; set; }
+
+    private static bool IsMiddleParagraph(Article blog, int index)
+    {
+        return index == (int)blog.Paragraph.Count() / 2;
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await JS.InvokeVoidAsync("console.log", $"Opening Blog {Slug}");
+        Blog = await GetFromJsonAsync<Article>(Uri.UnescapeDataString(Slug));
+    }
+
+    public async Task<T> GetFromJsonAsync<T>(string requestUri)
+    {
+        using (var response = await Http.GetAsync(requestUri, HttpCompletionOption.ResponseHeadersRead))
+        {
+            var jsonResult = await response.Content.ReadFromJsonAsync<T>();
+
+            return jsonResult;
+        }
+    }
+}

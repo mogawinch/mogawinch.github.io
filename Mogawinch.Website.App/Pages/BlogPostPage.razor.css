@@ -1,0 +1,100 @@
+/* blog Page Container */
+.blog-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Banner Image */
+.blog-banner img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* blog Title */
+.blog-page-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+/* Paragraphs */
+.blog-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 1rem;
+}
+
+/* Notes Section */
+.blog-notes {
+    background: linear-gradient(
+        135deg,
+        darkslategrey 0%,
+        #2c2c44 100%
+    );
+    color: #fff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+    .blog-notes h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+.blog-meta {
+    font-size: 0.9rem;
+    opacity: 0.9; /* slightly darker */
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.blog-author {
+    font-weight: 500;
+    color: #888; /* darker, subtle tone */
+}
+
+.blog-date {
+    color: #777; /* slightly darker than before */
+}
+
+.separator {
+    color: #666; /* darker dot */
+}
+
+.blog-middle-image {
+    width: 100%;
+    margin: 1.5rem 0; /* spacing above and below */
+    text-align: center;
+}
+
+.blog-middle-image img {
+    width: 80%;          /* smaller than full width */
+    max-width: 500px;    /* prevent it from getting too large on desktop */
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2); /* lighter shadow than main banner */
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;      /* center the image */
+}
+
+/* Responsive for Mobile */
+@media (max-width: 641px) {
+    .blog-middle-image img {
+        width: 95%;       /* almost full width on small screens */
+        max-width: unset; /* allow flexibility */
+        height: auto;
+    }
+}
