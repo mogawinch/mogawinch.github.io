@@ -72,6 +72,19 @@
                 }
             }
         });
+
+        window.blazorScroll = {
+            resetScroll: function (elementId = null) {
+                if (elementId) {
+                    const element = document.getElementById(elementId);
+                    if (element) {
+                        element.scrollTop = 0;
+                    }
+                } else {
+                    window.scrollTo(0, 0); // Scrolls the entire page to the top
+                }
+            }
+    };
     </script>
 </body>
 

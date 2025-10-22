@@ -204,14 +204,16 @@
 
 .review-search[b-271ycuxzqn] {
     display: flex;
-    justify-content: center;
-    margin: 1rem auto 2rem;
-    max-width: 600px;
-    padding: 0 2rem;
+    justify-content: flex-start;
+    margin: 0 auto 2rem;
+    padding: 1rem 2rem 0;
+    max-width: 1300px;
+    box-sizing: border-box;
 }
 
     .review-search input[b-271ycuxzqn] {
         width: 100%;
+        max-width: 400px; /* smaller width for desktop */
         padding: 0.75rem 1rem;
         border-radius: 8px;
         border: 1px solid #ccc;
@@ -227,6 +229,50 @@
             border-color: #888;
             box-shadow: 0 0 6px rgba(0,0,0,0.1);
         }
+
+@media (max-width: 641px) {
+    .review-search[b-271ycuxzqn] {
+        justify-content: center;
+        padding: 0 1rem;
+    }
+
+    .review-search input[b-271ycuxzqn] {
+        max-width: 100%;
+    }
+}
+
+.pagination[b-271ycuxzqn] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem 0;
+    color: #fff;
+}
+
+.pagination button[b-271ycuxzqn] {
+    background-color: #2a2a3d;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.pagination button:hover:not(:disabled)[b-271ycuxzqn] {
+    background-color: #3d3d5c;
+}
+
+.pagination button:disabled[b-271ycuxzqn] {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.pagination span[b-271ycuxzqn] {
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
 /* /Pages/Index.razor.rz.scp.css */
 .home-banner[b-vbo520ba11] {
     background-color: #f4f4f4;
@@ -778,8 +824,8 @@
 
 .review-overview.featured .reviewScore[b-1srkehvyqx] {
     position: absolute;
-    top: 1.5rem;          /* keep it from the top */
-    left: 1.5rem;         /* keep it from the left */
+    bottom: 1.5rem;          /* keep it from the top */
+    right: 1.5rem;         /* keep it from the left */
     width: 80px;
     height: 80px;
     border-radius: 50%;
@@ -811,8 +857,8 @@
 /* Mobile adjustments */
 @media (max-width: 641px) {
     .review-overview.featured .reviewScore[b-1srkehvyqx] {
-        top: 0.5rem;          /* a little closer to top */
-        left: 0.5rem;         /* a little closer to left */
+        bottom: 0.5rem;          /* a little closer to top */
+        right: 0.5rem;         /* a little closer to left */
         width: 40px;           /* smaller circle */
         height: 40px;
         font-size: 1.2rem;     /* smaller number */
@@ -822,6 +868,11 @@
     .review-overview.featured .review-content[b-1srkehvyqx] {
         padding: 1.5rem 1.5rem 2.5rem;
     }
+
+    .review-overview.featured[b-1srkehvyqx] {
+        height: 260px;
+    }
+    .review-overview.featured .reviewTitle[b-1srkehvyqx] { font-size: 1.5rem; }
 }
 
 .review-overview.featured:hover .reviewScore[b-1srkehvyqx] {
@@ -836,12 +887,4 @@
 
 .review-grid > .review-overview.featured[b-1srkehvyqx] {
     grid-column: 1 / -1;   /* make it take the full row in the grid */
-}
-
-/* responsive */
-@media (max-width: 768px) {
-    .review-overview.featured[b-1srkehvyqx] {
-        height: 260px;
-    }
-    .review-overview.featured .reviewTitle[b-1srkehvyqx] { font-size: 1.5rem; }
 }
