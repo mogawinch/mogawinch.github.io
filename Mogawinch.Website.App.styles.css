@@ -661,6 +661,118 @@
         padding: 0.6rem 0;
     }
 }
+/* /Pages/Privacy.razor.rz.scp.css */
+.privacy-page[b-uwwathm7va] {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+.privacy-page h1[b-uwwathm7va] {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.privacy-page h2[b-uwwathm7va] {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #444;
+}
+
+.privacy-page p[b-uwwathm7va] {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.privacy-page a[b-uwwathm7va] {
+    color: #1e90ff;
+    text-decoration: none;
+}
+
+.privacy-page a:hover[b-uwwathm7va] {
+    text-decoration: underline;
+}
+
+/* Responsive for mobile */
+@media (max-width: 640px) {
+    .privacy-page[b-uwwathm7va] {
+        padding: 1rem;
+    }
+
+    .privacy-page h1[b-uwwathm7va] {
+        font-size: 1.6rem;
+    }
+
+    .privacy-page h2[b-uwwathm7va] {
+        font-size: 1.1rem;
+    }
+
+    .privacy-page p[b-uwwathm7va] {
+        font-size: 0.95rem;
+    }
+}
+/* /Pages/Terms.razor.rz.scp.css */
+.terms-page[b-9hj2yu8tr2] {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+.terms-page h1[b-9hj2yu8tr2] {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.terms-page h2[b-9hj2yu8tr2] {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #444;
+}
+
+.terms-page p[b-9hj2yu8tr2] {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.terms-page a[b-9hj2yu8tr2] {
+    color: #1e90ff;
+    text-decoration: none;
+}
+
+.terms-page a:hover[b-9hj2yu8tr2] {
+    text-decoration: underline;
+}
+
+/* Responsive for mobile */
+@media (max-width: 640px) {
+    .terms-page[b-9hj2yu8tr2] {
+        padding: 1rem;
+    }
+
+    .terms-page h1[b-9hj2yu8tr2] {
+        font-size: 1.6rem;
+    }
+
+    .terms-page h2[b-9hj2yu8tr2] {
+        font-size: 1.1rem;
+    }
+
+    .terms-page p[b-9hj2yu8tr2] {
+        font-size: 0.95rem;
+    }
+}
 /* /Shared/ArticleOverview.razor.rz.scp.css */
 .review-overview[b-oopc8asv14] {
     width: 100%;
@@ -885,14 +997,14 @@
 
 .social-media[b-xxmk50sjkk] {
     display: inline-flex;
-    height: 25px;
+    height: 30px;
     justify-self: end;
 }
 
 .social-media img[b-xxmk50sjkk] {
     object-fit: cover;
     margin-left: 10px;
-    height: 25px; /* keep original height */
+    height: 25px;
 }
 
 .top-row[b-xxmk50sjkk] {
