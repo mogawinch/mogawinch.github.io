@@ -1,0 +1,55 @@
+.privacy-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+.privacy-page h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.privacy-page h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #444;
+}
+
+.privacy-page p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.privacy-page a {
+    color: #1e90ff;
+    text-decoration: none;
+}
+
+.privacy-page a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive for mobile */
+@media (max-width: 640px) {
+    .privacy-page {
+        padding: 1rem;
+    }
+
+    .privacy-page h1 {
+        font-size: 1.6rem;
+    }
+
+    .privacy-page h2 {
+        font-size: 1.1rem;
+    }
+
+    .privacy-page p {
+        font-size: 0.95rem;
+    }
+}

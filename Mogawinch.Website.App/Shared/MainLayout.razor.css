@@ -14,14 +14,14 @@
 
 .social-media {
     display: inline-flex;
-    height: 25px;
+    height: 30px;
     justify-self: end;
 }
 
 .social-media img {
     object-fit: cover;
     margin-left: 10px;
-    height: 25px; /* keep original height */
+    height: 25px;
 }
 
 .top-row {
