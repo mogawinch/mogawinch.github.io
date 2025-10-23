@@ -22,6 +22,13 @@
             <span class="separator">•</span>
             <span class="review-date">@Review.Date</span>
         </div>
+
+        <!-- Spoiler-Free Notice -->
+        <div class="no-spoiler-note">
+            ⚠️ This review is <strong>spoiler-free</strong>. 
+            We focus on gameplay, atmosphere, and overall experience without revealing story details.
+        </div>
+
         <!-- Paragraphs -->
         @foreach (var reviewParagraph in Review.Paragraph.Select((value, index) => new { index, value }))
         {
@@ -30,40 +37,43 @@
             @if (IsMiddleParagraph(Review, reviewParagraph.index))
             {
                 <div class="review-middle-image">
-                    <img src="@Review.ImagePath" alt="Secondary Image" />
+                    <img src="@Review.SecondaryImagePath" alt="Secondary Image" />
                 </div>
             }
         }
 
         <!-- Notes Section -->
-        <div class="review-notes">
-            <h2>Review Summary</h2>
-            <div class="note-recap">
-                <div class="pros-cons">
-                    <div class="pros">
-                        <h3>Good</h3>
-                        <ul>
-                            @foreach (var good in Review.GoodSummary)
-                            {
-                                <li>@good</li>
-                            }
-                        </ul>
+        @if (@Review.ReviewScore != null)
+        {
+            <div class="review-notes">
+                <h2>Review Summary</h2>
+                <div class="note-recap">
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h3>Good</h3>
+                            <ul>
+                                @foreach (var good in Review.GoodSummary)
+                                {
+                                    <li>@good</li>
+                                }
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h3>Bad</h3>
+                            <ul>
+                                @foreach(var bad in Review.BadSummary)
+                                {
+                                    <li>@bad</li>
+                                }
+                            </ul>
+                        </div>
                     </div>
-                    <div class="cons">
-                        <h3>Bad</h3>
-                        <ul>
-                            @foreach(var bad in Review.BadSummary)
-                            {
-                                <li>@bad</li>
-                            }
-                        </ul>
+                    <div class="score @GetScoreClass(Review.ReviewScore)">
+                        @Review.ReviewScore
                     </div>
-                </div>
-                <div class="score score-high">
-                    @Review.ReviewScore
                 </div>
             </div>
-        </div>
+        }
     </div>
 }
 </div>
@@ -94,5 +104,12 @@
 
             return jsonResult;
         }
+    }
+
+    private string GetScoreClass(int? score)
+    {
+        if (score <= 5) return "score-low";      // red
+        if (score <= 7) return "score-medium";   // yellow
+        return "score-high";                 // green
     }
 }

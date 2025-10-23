@@ -170,3 +170,14 @@
         height: auto;
     }
 }
+
+.no-spoiler-note {
+    background-color: #f4f8f4;
+    border-left: 4px solid #4CAF50;
+    padding: 10px 15px;
+    margin: 15px 0 25px;
+    font-size: 0.95rem;
+    font-style: italic;
+    color: #333;
+    border-radius: 6px;
+}

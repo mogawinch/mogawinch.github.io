@@ -5,7 +5,7 @@
     "ImagePath": "assets/review_test.jpg",
     "SecondaryImagePath": "assets/review_test.jpg",
     "Excerpt": "A thrilling return to classic dungeon crawling, blending nostalgia with modern polish.",
-    "ReviewScore": 10,
+    "ReviewScore": null,
     "Paragraph": [
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin mollis quam nec libero dignissim, in consequat purus commodo.",
         "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.",

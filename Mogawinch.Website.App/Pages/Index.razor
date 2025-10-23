@@ -85,7 +85,7 @@
             await JS.InvokeVoidAsync("console.log", $"paths are {indexes.Count()}");
 
             var reviewIndexes = indexes.Where(i => i.Path.Contains("content/reviews/games")).Take(7);
-            var blogIndexes = indexes.Where(i => i.Path.Contains("content/blogs")).Take(7);
+            var blogIndexes = indexes.Where(i => i.Path.Contains("content/blogs")).Take(6);
 
             foreach (var index in reviewIndexes)
             {
