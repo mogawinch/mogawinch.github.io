@@ -1,0 +1,27 @@
+{
+    "Author": "Mark Winch",
+    "Date": "2025-10-15",
+    "Title": "Sonic Racing CrossWorlds",
+    "ImagePath": "assets/games/crossworlds_main.jpg",
+    "SecondaryImagePath": "assets/games/crossworlds_second.webp",
+    "Excerpt": "A chaotic and fast-paced racing game that is hard to put down.",
+    "ReviewScore": 9,
+    "Paragraph": [
+        "Sonic CrossWorlds Racing is fast, really fast, and it feels amazing to play. I had a hard time putting it down once I started, as the game does a lot of things right.",
+        "Sega added a new twist to the Sonic Racing formula with CrossWorlds. For the first and last lap, you race on the chosen map, while the second lap takes you to another map. The first player can choose between a known map or a random one. The gimmick is dynamic and adds strategy, especially when you are in first place.",
+        "The gameplay feels good. It is simple and familiar, but there is a lot to learn to become faster. Even when dashing through the maps, I always feel in control of my movement. They also included transformations from Sonic Racing Transformed, and it works well. The Grand Prix is improved by allowing the player to retry a race using hard-earned tickets if something goes wrong.",
+        "There are also a lot of customization options, affecting both gameplay and cosmetics. You can mix and match parts of vehicles and add patterns to make them unique. The gadget system gives personal modifiers to each driver, letting you focus on your preferred playstyle. For example, if you want to focus on offense, you can equip gadgets that give you more powerful items, and it works well.",
+        "Online mode is chaotic and exciting, keeping you on the edge of your seat. Unfortunately, it can also be very unbalanced. Some specific builds and gadgets are so strong that they are almost required to be competitive. While not every gadget should be equally viable, some need reworking to ensure players have diverse options.",
+        "Another issue is the Donpa Tickets. Getting tickets is grindy, especially when so much can be purchased with them. To unlock new levels in the Friendship system, you spend thousands of tickets for a single level of one driver. Considering that there is 23 drivers in the base game, someone that want to unlock everything should buckle up as he will be in it for the long run.",
+        "Finally, the price. Sonic Racing CrossWorlds is not cheap. If you are a fan of racing games and plan to play online, it is definitely worth it. Sega did great there and really show they can make outstanding games. With some polish on the Donpa Tickets and better balance in online builds, this could become one of the best arcade racing games out there."
+    ],
+    "GoodSummary": [
+        "CrossWorlds are a great addition",
+        "A lot of customization options",
+        "The gadget system is well made"
+    ],
+    "BadSummary": [
+        "Unbalanced in online",
+        "Getting tickets is grindy"
+    ]
+}
