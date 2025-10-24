@@ -34,7 +34,7 @@
         {
             <p>@reviewParagraph.value</p>
 
-            @if (IsMiddleParagraph(Review, reviewParagraph.index))
+            @if (IsMiddleParagraph(Review, reviewParagraph.index) && Review.SecondaryImagePath != null)
             {
                 <div class="review-middle-image">
                     <img src="@Review.SecondaryImagePath" alt="Secondary Image" />

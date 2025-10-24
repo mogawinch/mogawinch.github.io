@@ -27,7 +27,7 @@
         {
             <p>@blogParagraph.value</p>
 
-            @if (IsMiddleParagraph(Blog, blogParagraph.index))
+            @if (IsMiddleParagraph(Blog, blogParagraph.index) && Blog.SecondaryImagePath != null)
             {
                 <div class="blog-middle-image">
                     <img src="@Blog.SecondaryImagePath" alt="Secondary Image" />
