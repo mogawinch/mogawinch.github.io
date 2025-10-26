@@ -1,9 +1,8 @@
 {
     "Author": "Mark Winch",
     "Date": "2025-08-14",
-    "Title": "AI Dungeon",
-    "ImagePath": "assets/games/aidungeon_main.jpg",
-    "SecondaryImagePath": "assets/games/aidungeon_second.jpg",
+    "Title": "AI Dungeon 2",
+    "ImagePath": "assets/games/aidungeon.png",
     "Excerpt": "A fascinating blend between storytelling and imagination.",
     "ReviewScore": 7,
     "Paragraph": [
