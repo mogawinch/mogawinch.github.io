@@ -1,9 +1,9 @@
 {
     "Author": "Mark Winch",
-    "Date": "2025-08-14",
+    "Date": "2025-09-14",
     "Title": "AI Dungeon 2",
     "ImagePath": "assets/games/aidungeon.png",
-    "Excerpt": "A fascinating blend between storytelling and imagination.",
+    "Excerpt": "A blend between storytelling and imagination.",
     "ReviewScore": 7,
     "Paragraph": [
         "AI Dungeon isn’t really a game. It’s more like a mix between an interactive story and a collaborative writing tool where you create adventures with an AI. There’s no clear goal or ending, just the freedom to imagine and explore any world you want.",
@@ -21,7 +21,6 @@
     ],
     "BadSummary": [
         "Too much NSFW community content",
-        "LLM setup can be tedious",
         "Story card management can be cumbersome",
         "Free tier is very limited"
     ]
