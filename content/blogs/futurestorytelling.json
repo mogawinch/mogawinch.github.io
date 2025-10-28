@@ -1,0 +1,14 @@
+{
+    "Author": "Mark Winch",
+    "Date": "2025-09-20",
+    "Title": "Future of storytelling in Gaming",
+    "ImagePath": "assets/review/games/aidungeon.png",
+    "Excerpt": "Exploring how AI narrative tools could change the way we play and experience games.",
+    "Paragraph": [
+        "AI Dungeon is one of the first projects I experienced that truly shows what happens when artificial intelligence meets storytelling. It is not exactly a game, but more of a space where players and AI collaborate to create stories together. It can interpret natural language, react to player input, and shape a narrative on the fly. That ability to understand context and build upon it could redefine how stories are told in games.",
+        "What makes this technology interesting is how it remembers things and keeps the story consistent. Instead of following pre-written lines, the AI tries to recall what happened before and uses that to shape what comes next. It can remember names, places, or choices you made earlier, which helps the story feel more alive. This idea could lead to games where characters react differently based on your actions and where each story feels more personal.",
+        "Of course, there are still many ethical concerns and technical limitations. A tool like AI Dungeon needs strong content moderation to prevent abuse, and it still struggles with maintaining tone and coherence over longer stories. But these challenges also highlight the importance of using AI responsibly, it should not replace human creativity, but to help it, bounce ideas around, etc... AI should become a creative partner rather than a substitute for tech companies.",
+        "The future of gaming might not be about purely AI generated worlds, but about collaboration between human-driven and AI-driven systems. Imagine a large RPG where AI manages the dynamic dialogue, fills gaps between major story moments, and makes side quests feel truly unique. It would give game developers more time to focus on creating the main experience for players, while AI could fill the in-between moments, making every journey feel fresh.",
+        "AI Dungeon might not be perfect, but it opened the door to a future where games listen, learn, and evolve with the player. If used ethically and creatively, AI narrative systems could be the next big step toward making games feels truly alive."
+    ]
+}
