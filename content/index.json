@@ -1,12 +1,6 @@
 [
     { "Path": "content/blogs/futurestorytelling.json", "Title": "Future of storytelling in Gaming: Exploring how AI narrative tools could change the way we play and experience games." },
     { "Path": "content/blogs/farewelltolastgenconsole.json", "Title": "Farewell to Last-Gen Consoles: PUBG Drops Xbox One/PS4 Support." },
-    { "Path": "content/blogs/6.json", "Title": "Expedition 33 - What will it causes in the induestry" },
-    { "Path": "content/blogs/5.json", "Title": "Expedition 33 - What will it causes in the induestry" },
-    { "Path": "content/blogs/4.json", "Title": "Expedition 33 - What will it causes in the induestry" },
-    { "Path": "content/blogs/3.json", "Title": "Expedition 33 - What will it causes in the induestry" },
-    { "Path": "content/blogs/2.json", "Title": "Expedition 33 - What will it causes in the induestry" },
-    { "Path": "content/blogs/1.json", "Title": "Expedition 33 - What will it causes in the induestry" },
     { "Path": "content/reviews/games/pokemonza.json", "Title": "Pokemon Legends Z-A" },
     { "Path": "content/reviews/games/crossworlds.json", "Title": "Sonic Racing CrossWorlds" },
     { "Path": "content/reviews/games/galaxy1&2.json", "Title": "Super Mario Galaxy + Super Mario Galaxy 2" },
@@ -14,8 +8,5 @@
     { "Path": "content/reviews/games/mariokartworld.json", "Title": "Mario Kart World" },
     { "Path": "content/reviews/games/f1manager2024.json", "Title": "F1 Manager 2024" },
     { "Path": "content/reviews/games/expedition33.json", "Title": "Clair Obscur: Expedition 33" },
-    { "Path": "content/reviews/games/avowed.json", "Title": "Avowed" },
-    { "Path": "content/reviews/games/3.json", "Title": "Expedition 33 - An unexpected surprise" },
-    { "Path": "content/reviews/games/2.json", "Title": "Expedition 33 - An unexpected surprise" },
-    { "Path": "content/reviews/games/1.json", "Title": "Expedition 33 - An unexpected surprise" }
+    { "Path": "content/reviews/games/avowed.json", "Title": "Avowed" }
 ]
