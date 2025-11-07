@@ -9,7 +9,7 @@
 {
     <!-- Banner Image -->
     <div class="review-banner">
-        <img src="@Review.ImagePath" alt="@Review.Title" />
+        <img src="@Review.ImagePath" alt="@Review.Title" onclick="openImageModal(this)"/>
     </div>
 
     <!-- Review Content -->
@@ -37,7 +37,7 @@
             @if (IsMiddleParagraph(Review, reviewParagraph.index) && Review.SecondaryImagePath != null)
             {
                 <div class="review-middle-image">
-                    <img src="@Review.SecondaryImagePath" alt="Secondary Image" />
+                    <img src="@Review.SecondaryImagePath" alt="Secondary Image" onclick="openImageModal(this)"/>
                 </div>
             }
         }
@@ -75,6 +75,12 @@
             </div>
         }
     </div>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="image-modal" @onclick="CloseModal">
+        <span class="close">&times;</span>
+        <img class="image-modal-content" id="modalImage" />
+    </div>
 }
 </div>
 
@@ -111,5 +117,10 @@
         if (score <= 5) return "score-low";      // red
         if (score <= 7) return "score-medium";   // yellow
         return "score-high";                 // green
+    }
+
+    private void CloseModal(MouseEventArgs e)
+    {
+        JS.InvokeVoidAsync("closeImageModal");
     }
 }
