@@ -1,9 +1,9 @@
 {
     "Author": "Mark Winch",
-    "Date": "2025-04-30",
+    "Date": "2025-04-27",
     "Title": "The Elder Scrolls IV: Oblivion Remastered",
-    "ImagePath": "assets/games/oblivionremaster_main.jpg",
-    "SecondaryImagePath": "assets/games/oblivionremaster_second.jpg",
+    "ImagePath": "assets/games/oblivionremaster_main.avif",
+    "SecondaryImagePath": null,
     "Excerpt": "A visually shining return to Cyrodiil that struggles to hide the age of its systems.",
     "ReviewScore": 7,
     "Paragraph": [
@@ -17,7 +17,7 @@
     "GoodSummary": [
         "Beautiful visual overhaul",
         "Massive world full of charm",
-        "Best version of Oblivion",
+        "Best version of Oblivion"
     ],
     "BadSummary": [
         "Not much gameplay modernization",
