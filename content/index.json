@@ -8,5 +8,6 @@
     { "Path": "content/reviews/games/mariokartworld.json", "Title": "Mario Kart World" },
     { "Path": "content/reviews/games/f1manager2024.json", "Title": "F1 Manager 2024" },
     { "Path": "content/reviews/games/expedition33.json", "Title": "Clair Obscur: Expedition 33" },
+    { "Path": "content/reviews/games/theelderscrolls4oblivionremaster.json", "Title": "The Elder Scrolls IV: Oblivion Remastered" },
     { "Path": "content/reviews/games/avowed.json", "Title": "Avowed" }
 ]
