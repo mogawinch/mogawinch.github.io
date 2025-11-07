@@ -369,6 +369,7 @@
     object-fit: cover;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    cursor: pointer;
 }
 
 /* Review Title */
@@ -502,6 +503,7 @@
     object-fit: cover;
     display: block;
     margin: 0 auto;      /* center the image */
+    cursor: pointer;
 }
 
 /* Responsive for Mobile */
@@ -534,6 +536,56 @@
     font-style: italic;
     color: #333;
     border-radius: 6px;
+}
+
+/* Image Modal */
+.image-modal[b-m41vtpiveo] {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.85);
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn-b-m41vtpiveo 0.3s ease-in-out;
+}
+
+.image-modal-content[b-m41vtpiveo] {
+    max-width: 90%;
+    max-height: 85%;
+    border-radius: 10px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.5);
+    animation: zoomIn-b-m41vtpiveo 0.3s ease;
+}
+
+/* Close Button */
+.image-modal .close[b-m41vtpiveo] {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.image-modal .close:hover[b-m41vtpiveo] {
+    color: #bbb;
+}
+
+/* Animations */
+@keyframes fadeIn-b-m41vtpiveo {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes zoomIn-b-m41vtpiveo {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
 }
 /* /Pages/GameReviewsPage.razor.rz.scp.css */
 /* Align the title to the same content width as the grid */
