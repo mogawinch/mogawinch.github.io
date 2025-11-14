@@ -23,9 +23,4 @@
     <Folder Include="wwwroot\assets\" />
   </ItemGroup>
 
-  <Target Name="GenerateSocialMediaLinks" BeforeTargets="BeforeBuild">
-    <!-- Make sure the path is relative to the project file or absolute -->
-    <Exec Command="&quot;$(ProjectDir)generate-social_link.bat&quot;" />
-  </Target>
-
 </Project>
