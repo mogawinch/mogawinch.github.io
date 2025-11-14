@@ -89,19 +89,6 @@
 }
 </div>
 
-@if (Review != null)
-{
-    <HeadContent>
-        <meta name="description" content="@Review.Excerpt">
-        <meta property="og:title" content="@Review.Title" />
-        <meta property="og:type" content="article" />
-        <meta property="og:image" content="@Review.ImagePath" />
-        <meta property="og:description" content="@Review.Excerpt" />
-        <meta property="og:url" content="https://www.mogawinch.com" />
-        <meta property="og:site_name" content="Mogawinch HQ" />
-    </HeadContent>
-}
-
 @code {
     [Parameter]
     public string Slug { get; set; }
