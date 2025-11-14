@@ -36,7 +36,8 @@ jobs:
       
       - name: Add bionic-security repository for libssl1.0
         run: | 
-          echo "deb http://security.ubuntu.com/ubuntu bionic-security main" | sudo tee -a /etc/apt/sources.list sudo apt update --allow-insecure-repositories
+          echo "deb http://security.ubuntu.com/ubuntu bionic-security main" | sudo tee -a /etc/apt/sources.list
+          sudo apt update --allow-insecure-repositories
       
       - name: Install libssl1.0-dev
         run: sudo apt-get install -y libssl1.0-dev --allow-unauthenticated 
