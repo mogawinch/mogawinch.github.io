@@ -7,6 +7,8 @@
 @inject HttpClient Http
 @inject NavigationManager NavManager
 
+<PageTitle>Mogawinch HQ</PageTitle>
+
 <div id="home">
     @if (Reviews == null)
     {
@@ -68,6 +70,14 @@
         </div>
     }
 </div>
+
+<HeadContent>
+    <meta property="og:title" content="Mogawinch HQ" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="https://mogawinch.com/assets/mogawinch_logo.svg" />
+    <meta property="og:url" content="https://www.mogawinch.com" />
+    <meta property="og:site_name" content="Mogawinch HQ" />
+</HeadContent>
 
 @code {
     private Article[] Reviews;

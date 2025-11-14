@@ -2,6 +2,12 @@
 @using Mogawinch.Models
 @inject IJSRuntime JS
 @inject HttpClient Http
+@inject NavigationManager MyNavigationManager
+
+@if (Review != null)
+{
+    <PageTitle>@Review.Title</PageTitle>
+}
 
 <div class="review-page">
 
@@ -84,6 +90,16 @@
 }
 </div>
 
+@if (Review != null)
+{
+    <HeadContent>
+        <meta property="og:title" content="@Review.Title" />
+        <meta property="og:type" content="article" />
+        <meta property="og:image" content="@($"https://mogawinch.com/{Review.ImagePath}")" />
+        <meta property="og:url" content="@(MyNavigationManager.Uri)" />
+        <meta property="og:site_name" content="Mogawinch HQ" />
+    </HeadContent>
+}
 @code {
     [Parameter]
     public string Slug { get; set; }
