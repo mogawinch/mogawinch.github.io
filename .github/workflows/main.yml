@@ -1,36 +1,49 @@
 name: Build and Deploy
+
 on:
   push:
     branches:
       - master
+
 jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
+  generate-social-media:
+    runs-on: windows-latest
     steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v2.3.1
+      - name: Check out the repository
+        uses: actions/checkout@v4
 
-      - name: Add bionic-security repository for libssl1.0
-        run: |
-         echo "deb http://security.ubuntu.com/ubuntu bionic-security main" | sudo tee -a /etc/apt/sources.list
-         sudo apt update --allow-insecure-repositories
+      - name: Run .bat file
+        run: .\Mogawinch.Website.App\generate-social_link.bat
 
-      - name: Install libssl1.0-dev
-        run: sudo apt-get install -y libssl1.0-dev --allow-unauthenticated
+      - name: Upload social media HTML as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: social-media-html
+          path: wwwroot\content\links
 
-      - name: Override SSL Conf
-        run: sudo sh -c 'sed -i "1s/^/openssl_conf = default_conf\\n\\n/" /etc/ssl/openssl.cnf && printf "\n[default_conf]\nssl_conf = ssl_sect\n\n[ssl_sect]\nsystem_default = system_default_sect\n\n[system_default_sect]\nMinProtocol = TLSv1.2\nCipherString = DEFAULT:@SECLEVEL=1\n" >> /etc/ssl/openssl.cnf'
+  build-and-deploy:
+    runs-on: windows-latest
+    needs: generate-social-media
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
 
-      - name: Setup .NET Core SDK 💻
-        uses: actions/setup-dotnet@v1
+      - name: Download social media HTML artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: social-media-html
+          path: wwwroot\content\links
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v3
         with:
           dotnet-version: 8.0.x
 
-      - name: Build 🔧
+      - name: Build
         run: dotnet publish Mogawinch.Website.sln -c Release -o release
 
-      - name: Deploy 🚀
+      - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: release/wwwroot
+          folder: release\wwwroot
