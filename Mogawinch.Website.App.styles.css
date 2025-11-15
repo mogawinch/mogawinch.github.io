@@ -577,6 +577,19 @@
     color: #bbb;
 }
 
+.share-icon[b-m41vtpiveo] {
+    font-size: 1.2em;
+    margin-left: 0.5rem;
+    cursor: pointer;
+    color: #4CAF50;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.share-icon[b-m41vtpiveo] {
+    transform: scale(1.15);
+    opacity: 0.8;
+}
+
 /* Animations */
 @keyframes fadeIn-b-m41vtpiveo {
     from { opacity: 0; }
