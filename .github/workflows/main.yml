@@ -6,21 +6,6 @@ on:
       - master
 
 jobs:
-  generate-social-media:
-    runs-on: windows-latest
-    steps:
-      - name: Check out the repository
-        uses: actions/checkout@v4
-
-      - name: Run .bat file
-        run: .\Mogawinch.Website.App\generate-social_link.bat
-
-      - name: Upload social media HTML as artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: social-media-html
-          path: .\Mogawinch.Website.App\wwwroot\content\links
-
   build-and-deploy: 
     runs-on: ubuntu-latest
     needs: generate-social-media
@@ -28,11 +13,11 @@ jobs:
       - name: Checkout 🛎️ 
         uses: actions/checkout@v2.3.1
 
-      - name: Download social media HTML artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: social-media-html
-          path: .\Mogawinch.Website.App\wwwroot\content\links
+      - name: Install PowerShell
+        uses: PowerShell/PowerShell@v7
+
+      - name: Run link generator
+        run: pwsh ./Mogawinch.Website.App/generate-links.ps1
       
       - name: Add bionic-security repository for libssl1.0
         run: | 
