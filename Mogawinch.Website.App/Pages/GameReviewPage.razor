@@ -1,5 +1,6 @@
 ﻿@page "/reviews/games/{Slug}"
 @using Mogawinch.Models
+@using System.IO
 @inject IJSRuntime JS
 @inject HttpClient Http
 @inject NavigationManager MyNavigationManager
@@ -20,7 +21,19 @@
 
     <!-- Review Content -->
     <div class="review-content">
-        <h1 class="review-page-title">@Review.Title</h1>
+        <h1 class="review-page-title">
+            @Review.Title
+            <span class="share-icon" @onclick="ToggleSharePopup">🔗</span>
+        </h1>
+
+        
+        @if (ShowSharePopup && !string.IsNullOrWhiteSpace(ShareableLink))
+        {
+            <div class="share-popup">
+                <span>@ShareableLink</span>
+                <button @onclick="CopyShareableLink" class="copy-btn">Copy</button>
+            </div>
+        }
 
         <!-- Author and Date -->
         <div class="review-meta">
@@ -107,6 +120,10 @@
     [Parameter]
     public Article Review { get; set; }
 
+    private string ShareableLink = "";
+    private string JsonFileName = "";
+    private bool ShowSharePopup = false;
+
     private static bool IsMiddleParagraph(Article review, int index)
     {
         return index == (int)review.Paragraph.Count() / 2;
@@ -115,7 +132,11 @@
     protected override async Task OnInitializedAsync()
     {
         await JS.InvokeVoidAsync("console.log", $"Opening Review {Slug}");
-        Review = await GetFromJsonAsync<Article>(Article.Base64Decode(Slug));
+
+        var decodedPath = Article.Base64Decode(Slug);
+        JsonFileName = Path.GetFileNameWithoutExtension(decodedPath);
+        ShareableLink = $"https://mogawinch.com/content/social_media_link/{JsonFileName}.html";
+        Review = await GetFromJsonAsync<Article>(decodedPath);
     }
 
     public async Task<T> GetFromJsonAsync<T>(string requestUri)
@@ -138,5 +159,15 @@
     private void CloseModal(MouseEventArgs e)
     {
         JS.InvokeVoidAsync("closeImageModal");
+    }
+
+    private void ToggleSharePopup()
+    {
+        ShowSharePopup = !ShowSharePopup;
+    }
+
+    private async Task CopyShareableLink()
+    {
+        await JS.InvokeVoidAsync("navigator.clipboard.writeText", ShareableLink);
     }
 }
