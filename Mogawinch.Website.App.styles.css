@@ -578,11 +578,13 @@
 }
 
 .share-icon[b-m41vtpiveo] {
-    font-size: 1.2em;
-    margin-left: 0.5rem;
+    font-size: 0.9em;
+    margin-left: 0.3rem;
     cursor: pointer;
     color: #4CAF50;
+    opacity: 0.7;
     transition: transform 0.2s ease, opacity 0.2s ease;
+    vertical-align: middle;
 }
 
 .share-icon[b-m41vtpiveo] {
