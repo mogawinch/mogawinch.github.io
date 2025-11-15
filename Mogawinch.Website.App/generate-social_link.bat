@@ -1,8 +1,10 @@
 @echo off
 setlocal
 
-set "JSON_DIR=wwwroot\content\reviews/games"
-set "OUTPUT_DIR=wwwroot\content\links"
+set "BASE_DIR=%~dp0" 
+
+set "JSON_DIR=%BASE_DIR%wwwroot\content\reviews\games"
+set "OUTPUT_DIR=%BASE_DIR%wwwroot\content\links"
 
 if not exist "%OUTPUT_DIR%" mkdir "%OUTPUT_DIR%"
 
@@ -26,4 +28,5 @@ for %%F in ("%JSON_DIR%\*.json") do (
 
 echo Done.
 endlocal
+
 
