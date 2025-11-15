@@ -15,8 +15,7 @@ if (-not (Test-Path $OutputDir)) {
 }
 
 Write-Host "Generating social media HTML links..."
-$generatedLinks = @()   # We'll collect the URLs for sitemap.xml
-
+$generatedLinks = @()   # We'll collect objects: @{Url=...; LastMod=...}
 
 # -----------------------------------------------------
 # Loop through JSON files
@@ -39,9 +38,7 @@ Get-ChildItem -Path $JsonDir -Filter "*.json" | ForEach-Object {
     $htmlFileName = [System.IO.Path]::ChangeExtension($jsonFileName, ".html")
     $out = Join-Path $OutputDir $htmlFileName
 
-    if (Test-Path $out) {
-        Write-Host "Exists: $out"
-    } else {
+    if (-not (Test-Path $out)) {
         $relativePath = "content/reviews/games/$jsonFileName"
         $path64 = [Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes($relativePath))
 
@@ -52,12 +49,17 @@ Get-ChildItem -Path $JsonDir -Filter "*.json" | ForEach-Object {
 
         $html | Out-File -Encoding UTF8 $out
         Write-Host "Created: $out"
+    } else {
+        Write-Host "Exists: $out"
     }
 
-    # Add link to sitemap
-    $generatedLinks += "/content/links/$htmlFileName"
+    # Add link and lastmod to sitemap array
+    $lastMod = (Get-Item $jsonFile).LastWriteTimeUtc.ToString("yyyy-MM-dd")
+    $generatedLinks += [PSCustomObject]@{
+        Url     = "/content/links/$htmlFileName"
+        LastMod = $lastMod
+    }
 }
-
 
 # -----------------------------------------------------
 # Generate sitemap.xml
@@ -69,9 +71,10 @@ $sitemapXml = @()
 $sitemapXml += '<?xml version="1.0" encoding="UTF-8"?>'
 $sitemapXml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
 
-foreach ($url in $generatedLinks) {
+foreach ($entry in $generatedLinks) {
     $sitemapXml += "  <url>"
-    $sitemapXml += "    <loc>https://mogawinch.com$url</loc>"
+    $sitemapXml += "    <loc>https://mogawinch.com$($entry.Url)</loc>"
+    $sitemapXml += "    <lastmod>$($entry.LastMod)</lastmod>"
     $sitemapXml += "    <changefreq>monthly</changefreq>"
     $sitemapXml += "    <priority>0.5</priority>"
     $sitemapXml += "  </url>"
