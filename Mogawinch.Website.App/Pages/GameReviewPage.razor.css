@@ -223,19 +223,17 @@
     color: #bbb;
 }
 
-.share-icon {
-    font-size: 0.9em;
-    margin-left: 0.3rem;
+.share-link {
+    font-size: 0.85em;
+    margin-left: 0.5rem;
     cursor: pointer;
     color: #4CAF50;
-    opacity: 0.7;
-    transition: transform 0.2s ease, opacity 0.2s ease;
-    vertical-align: middle;
+    transition: color 0.2s ease;
+    text-decoration: underline;
 }
 
-.share-icon {
-    transform: scale(1.15);
-    opacity: 0.8;
+.share-link {
+    color: #3E8E41
 }
 
 /* Animations */
