@@ -23,17 +23,8 @@
     <div class="review-content">
         <h1 class="review-page-title">
             @Review.Title
-            <span class="share-icon" @onclick="ToggleSharePopup">🔗</span>
+            <span class="share-icon" @onclick="CopyShareableLink">🔗</span>
         </h1>
-
-        
-        @if (ShowSharePopup && !string.IsNullOrWhiteSpace(ShareableLink))
-        {
-            <div class="share-popup">
-                <span>@ShareableLink</span>
-                <button @onclick="CopyShareableLink" class="copy-btn">Copy</button>
-            </div>
-        }
 
         <!-- Author and Date -->
         <div class="review-meta">
@@ -122,7 +113,6 @@
 
     private string ShareableLink = "";
     private string JsonFileName = "";
-    private bool ShowSharePopup = false;
 
     private static bool IsMiddleParagraph(Article review, int index)
     {
@@ -159,11 +149,6 @@
     private void CloseModal(MouseEventArgs e)
     {
         JS.InvokeVoidAsync("closeImageModal");
-    }
-
-    private void ToggleSharePopup()
-    {
-        ShowSharePopup = !ShowSharePopup;
     }
 
     private async Task CopyShareableLink()

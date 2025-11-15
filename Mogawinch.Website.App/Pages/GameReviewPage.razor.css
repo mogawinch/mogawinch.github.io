@@ -223,6 +223,19 @@
     color: #bbb;
 }
 
+.share-icon {
+    font-size: 1.2em;
+    margin-left: 0.5rem;
+    cursor: pointer;
+    color: #4CAF50;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.share-icon {
+    transform: scale(1.15);
+    opacity: 0.8;
+}
+
 /* Animations */
 @keyframes fadeIn {
     from { opacity: 0; }
