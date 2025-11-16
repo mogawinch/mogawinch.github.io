@@ -65,7 +65,7 @@
     </div>
     
     <script src="decode.js"></script>
-    <script src="_framework/blazor.webassembly.js"></script>
+    <script src="_framework/blazor.webassembly.js" autostart="false"></script>
     <script>
         Blazor.start({
             loadBootResource: function (type, name, defaultUri, integrity) {
@@ -85,8 +85,6 @@
                     })();
                 }
             }
-        }).then(() => {
-            // When Blazor is ready, it will take over and show the error UI only when needed
         }).catch(err => {
             document.getElementById("blazor-error-ui").style.display = "block";
             console.error(err);
