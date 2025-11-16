@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Mogawinch HQ</title>
+    <meta name="description" content="Mogawinch HQ: reviews and blogs about games and entertainment.">
     <base href="/" />
     <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
     <link href="css/app.css" rel="stylesheet" />
@@ -42,17 +43,29 @@
         }(window.location))
     </script>
     <!-- End Single Page Apps for GitHub Pages -->
+    <style>
+        #blazor-error-ui {
+            display: none; /* HIDE by default */
+        }
+    </style>
+
 </head>
 
 <body>
-    <div id="app">Loading...</div>
+    <div id="app">Mogawinch HQ is loading…</div>
+
+    <noscript>
+        <p>Mogawinch HQ: reviews and blogs about games and entertainment.</p>
+    </noscript>
+    
     <div id="blazor-error-ui">
         An unhandled error has occurred.
         <a href="" class="reload">Reload</a>
         <a class="dismiss">🗙</a>
     </div>
+    
     <script src="decode.js"></script>
-    <script src="_framework/blazor.webassembly.js" autostart="false"></script>
+    <script src="_framework/blazor.webassembly.js"></script>
     <script>
         Blazor.start({
             loadBootResource: function (type, name, defaultUri, integrity) {
@@ -72,6 +85,11 @@
                     })();
                 }
             }
+        }).then(() => {
+            // When Blazor is ready, it will take over and show the error UI only when needed
+        }).catch(err => {
+            document.getElementById("blazor-error-ui").style.display = "block";
+            console.error(err);
         });
 
         window.blazorScroll = {
