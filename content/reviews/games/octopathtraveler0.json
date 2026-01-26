@@ -3,7 +3,7 @@
     "Date": "2026-01-26",
     "Title": "Octopath Traveler 0",
     "ImagePath": "assets/games/octopath0_main.avif",
-    "SecondaryImagePath": "assets/games/octopath_second.jpg",
+    "SecondaryImagePath": "assets/games/octopath0_second.jpg",
     "Excerpt": "A richly rewarding JRPG that asks for patience but pays it back.",
     "ReviewScore": 8,
     "Paragraph": [
@@ -32,3 +32,4 @@
     ]
 
 }
+
