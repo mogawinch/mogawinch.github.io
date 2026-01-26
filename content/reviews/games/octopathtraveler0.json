@@ -5,7 +5,7 @@
     "ImagePath": "assets/games/octopath0_main.avif",
     "SecondaryImagePath": "assets/games/octopath_second.jpg",
     "Excerpt": "A richly rewarding JRPG that asks for patience but pays it back.",
-    "ReviewScore": 8.5,
+    "ReviewScore": 8,
     "Paragraph": [
         "Octopath Traveler 0 is one of those games that slowly pulls you in and refuses to let go. Not because it tries to impress you right away, but because it is simply a solid and generous JRPG. From the start, it is clear that even if the content is based on a mobile game, this is not a disguised gacha game or a stripped down experience. It feels like a real game that respects your time.",
         "What stood out to me the most is how much content you get for your money. This is a game you can easily spend hundreds of hours with without ever feeling like you are grinding just to keep playing, which I cannot say for the first Octopath Traveler. The story unfolds at its own pace, but if you take the time to follow it, it becomes genuinely rewarding.",
@@ -30,4 +30,5 @@
         "Some repetitive dialogue",
         "Voice acting is hit or miss"
     ]
+
 }
