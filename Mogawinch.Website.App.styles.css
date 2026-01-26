@@ -716,10 +716,17 @@
 }
 
 .featured-container[b-vbo520ba11] {
-    width: 100%;
-    max-width: 1300px; /* same as article-grid width */
-    margin: 0 auto 2.5rem auto; /* centers and adds bottom spacing */
-    display: block;
+    max-width: 1300px;
+    margin: 0 auto 2.5rem auto;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+@media (max-width: 641px) {
+    .featured-container[b-vbo520ba11] {
+        width: 100%;
+        margin-bottom: 2.5rem;
+    }
 }
 
 /* Align the title to the same content width as the grid */
