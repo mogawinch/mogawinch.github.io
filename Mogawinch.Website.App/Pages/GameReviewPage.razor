@@ -125,7 +125,7 @@
 
         var decodedPath = Article.Base64Decode(Slug);
         JsonFileName = Path.GetFileNameWithoutExtension(decodedPath);
-        ShareableLink = $"https://mogawinch.com/content/links/{JsonFileName}.html";
+        ShareableLink = $"https://mogawinch.com/content/links/{JsonFileName}";
         Review = await GetFromJsonAsync<Article>(decodedPath);
     }
 
