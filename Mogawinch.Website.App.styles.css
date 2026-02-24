@@ -196,14 +196,14 @@
     box-shadow: 0 6px 20px rgba(0,0,0,0.25);
 }
 
-    .blog-notes h2[b-nix36m1ca0] {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-    }
+.blog-notes h2[b-nix36m1ca0] {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
 
 .blog-meta[b-nix36m1ca0] {
     font-size: 0.9rem;
-    opacity: 0.9; /* slightly darker */
+    opacity: 0.9;
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
@@ -212,40 +212,95 @@
 
 .blog-author[b-nix36m1ca0] {
     font-weight: 500;
-    color: #888; /* darker, subtle tone */
+    color: #888;
 }
 
 .blog-date[b-nix36m1ca0] {
-    color: #777; /* slightly darker than before */
+    color: #777;
 }
 
 .separator[b-nix36m1ca0] {
-    color: #666; /* darker dot */
+    color: #666;
 }
 
 .blog-middle-image[b-nix36m1ca0] {
     width: 100%;
-    margin: 1.5rem 0; /* spacing above and below */
+    margin: 1.5rem 0;
     text-align: center;
 }
 
 .blog-middle-image img[b-nix36m1ca0] {
-    width: 80%;          /* smaller than full width */
-    max-width: 500px;    /* prevent it from getting too large on desktop */
+    width: 80%;
+    max-width: 500px;
     height: auto;
     border-radius: 12px;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.2); /* lighter shadow than main banner */
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
     object-fit: cover;
     display: block;
-    margin: 0 auto;      /* center the image */
+    margin: 0 auto;
 }
 
-/* Responsive for Mobile */
+
+/* ================================================= */
+/* ================= MOBILE POLISH ================= */
+/* ================================================= */
+
 @media (max-width: 641px) {
+
+    /* Overall container: less padding, less gap */
+    .blog-page[b-nix36m1ca0] {
+        padding: 1rem;
+        gap: 1.25rem;
+    }
+
+    /* Banner: less height on mobile */
+    .blog-banner img[b-nix36m1ca0] {
+        height: 200px;
+        border-radius: 10px;
+    }
+
+    /* Title: scale down and tighten */
+    .blog-page-title[b-nix36m1ca0] {
+        font-size: 1.45rem;
+        line-height: 1.2;
+        margin-bottom: 0.5rem;
+    }
+
+    /* Meta: wrap nicely, slightly bigger for readability */
+    .blog-meta[b-nix36m1ca0] {
+        font-size: 0.95rem;
+        flex-wrap: wrap;
+        row-gap: 0.25rem;
+    }
+
+    /* Paragraph readability */
+    .blog-content p[b-nix36m1ca0] {
+        font-size: 1.05rem;
+        line-height: 1.75;
+        margin-bottom: 0.9rem;
+    }
+
+    /* Notes card: bigger radius + better padding */
+    .blog-notes[b-nix36m1ca0] {
+        padding: 1.1rem;
+        border-radius: 16px;
+    }
+
+    .blog-notes h2[b-nix36m1ca0] {
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+    }
+
+    /* Middle image: full width and nicer spacing */
+    .blog-middle-image[b-nix36m1ca0] {
+        margin: 1rem 0;
+    }
+
     .blog-middle-image img[b-nix36m1ca0] {
-        width: 95%;       /* almost full width on small screens */
-        max-width: unset; /* allow flexibility */
+        width: 100%;
+        max-width: unset;
         height: auto;
+        border-radius: 12px;
     }
 }
 /* /Pages/BlogPostsPage.razor.rz.scp.css */
@@ -444,7 +499,8 @@
     }
 
     .pros ul[b-m41vtpiveo], .cons ul[b-m41vtpiveo] {
-        list-style: disc inside;
+        list-style: disc;
+        padding-left: 1.1rem;
     }
 
 /* Score */
@@ -504,27 +560,6 @@
     display: block;
     margin: 0 auto;      /* center the image */
     cursor: pointer;
-}
-
-/* Responsive for Mobile */
-@media (max-width: 640px) {
-    .pros-cons[b-m41vtpiveo] {
-        flex-direction: column;
-    }
-
-    .pros-cons[b-m41vtpiveo]::after {
-        display: none;
-    }
-
-    .pros[b-m41vtpiveo], .cons[b-m41vtpiveo] {
-        padding: 0;
-    }
-
-    .review-middle-image img[b-m41vtpiveo] {
-        width: 95%;       /* almost full width on small screens */
-        max-width: unset; /* allow flexibility */
-        height: auto;
-    }
 }
 
 .no-spoiler-note[b-m41vtpiveo] {
@@ -587,9 +622,122 @@
     vertical-align: middle;
 }
 
-.share-icon[b-m41vtpiveo] {
+.share-icon:hover[b-m41vtpiveo] {
     transform: scale(1.15);
     opacity: 0.8;
+}
+
+/* Responsive for Mobile */
+@media (max-width: 640px) {
+    .pros-cons[b-m41vtpiveo] {
+        flex-direction: column;
+    }
+
+    .pros-cons[b-m41vtpiveo]::after {
+        display: none;
+    }
+
+    .pros[b-m41vtpiveo], .cons[b-m41vtpiveo] {
+        padding: 0;
+    }
+
+    /* Middle image: full width and nicer spacing */
+    .review-middle-image[b-m41vtpiveo] {
+        margin: 1rem 0;
+    }
+
+    .review-middle-image img[b-m41vtpiveo] {    /* almost full width on small screens */
+        max-width: unset; /* allow flexibility */
+        height: auto;
+        width: 100%;
+        border-radius: 12px;
+    }
+
+       /* Overall container: less padding, less gap */
+    .review-page[b-m41vtpiveo] {
+        padding: 1rem;
+        gap: 1.25rem;
+    }
+
+    /* Banner: less height on mobile */
+    .review-banner img[b-m41vtpiveo] {
+        height: 200px;
+        border-radius: 10px;
+    }
+
+    /* Title: scale down and tighten */
+    .review-page-title[b-m41vtpiveo] {
+        font-size: 1.45rem;
+        line-height: 1.2;
+        margin-bottom: 0.5rem;
+    }
+
+    /* Meta: wrap nicely, slightly bigger for readability */
+    .review-meta[b-m41vtpiveo] {
+        font-size: 0.95rem;
+        flex-wrap: wrap;
+        row-gap: 0.25rem;
+    }
+
+    /* Paragraph readability */
+    .review-content p[b-m41vtpiveo] {
+        font-size: 1.05rem;
+        line-height: 1.75;
+        margin-bottom: 0.9rem;
+    }
+
+    /* No spoiler note: slightly larger + more breathing room */
+    .no-spoiler-note[b-m41vtpiveo] {
+        font-size: 1rem;
+        margin: 12px 0 18px;
+        padding: 12px 14px;
+    }
+
+    /* Review summary card: bigger radius + better padding */
+    .review-notes[b-m41vtpiveo] {
+        padding: 1.1rem;
+        border-radius: 16px;
+    }
+
+    .review-notes h2[b-m41vtpiveo] {
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+    }
+
+    /* Pros/cons spacing on mobile */
+    .note-recap[b-m41vtpiveo] {
+        gap: 0.75rem;
+    }
+
+    .pros h3[b-m41vtpiveo], .cons h3[b-m41vtpiveo] {
+        font-size: 1.1rem;
+        margin-bottom: 0.35rem;
+    }
+
+    .pros ul[b-m41vtpiveo], .cons ul[b-m41vtpiveo] {
+        list-style: disc;
+        padding-left: 1.1rem;  /* disc inside can look cramped on mobile */
+        margin: 0.25rem 0 0 0;
+    }
+
+    .pros li[b-m41vtpiveo], .cons li[b-m41vtpiveo] {
+        margin: 0.45rem 0;
+        line-height: 1.45;
+    }
+
+    /* Score circle: slightly smaller so it doesn’t dominate */
+    .score[b-m41vtpiveo] {
+        width: 52px;
+        height: 52px;
+        font-size: 1.05rem;
+    }
+
+    /* Modal close button: easier to tap */
+    .image-modal .close[b-m41vtpiveo] {
+        top: 14px;
+        right: 16px;
+        font-size: 2.25rem;
+    }
 }
 
 /* Animations */
