@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "Mogawinch.Website.App",
   "resources": {
-    "hash": "sha256-AARmDuHP7z2j4JV/Khz1xbO2V1oj10otbdn7jako0j4=",
+    "hash": "sha256-PMxUAkNRPmkkhqvlKIqQG5w6A20pUTb/tu/Au2RuqWs=",
     "jsModuleNative": {
       "dotnet.native.8.0.24.ugqavbte1w.js": "sha256-4g0GzvOXSwZvTLca4PrWJkoeltz+V9IF/hEFDcnVros="
     },
@@ -31,7 +31,7 @@
       "Microsoft.Extensions.Primitives.wasm": "sha256-6187ynEahDlSLMBvD4vAmiLpZ3clRb5xu6rM7O8AxNo=",
       "Microsoft.JSInterop.wasm": "sha256-A5jay/Yoey3an9sjxLxyNwTNW/VLHs7NZeEocewSe5w=",
       "Microsoft.JSInterop.WebAssembly.wasm": "sha256-1RU3QxK6cl9SuFE8eHdLid3P8O0LfOJRvWRfXJFBsG0=",
-      "Mogawinch.Website.App.wasm": "sha256-kBkvtxEJ352ZG0xT87xL+kOe1kuKT0ow2ckYkZx7pMc=",
+      "Mogawinch.Website.App.wasm": "sha256-4Nh3JFLoQrWOaqZwkQ2WxnNGNz2ZDCfyZBoiLD+TsXc=",
       "System.Collections.Concurrent.wasm": "sha256-ddCT9bmSLmFjgBPo/tEfiDB+F+2Hdk/W3umsvV3/pc8=",
       "System.Collections.wasm": "sha256-x8sD5YfFk4Vu+bp+1OusVBLdDJVSQW+f+vyJXEC+Kns=",
       "System.ComponentModel.wasm": "sha256-QtJbMlfu3PMpRubWU0o28pVOoLgM0g4SR7QBQ1dBtAg=",
