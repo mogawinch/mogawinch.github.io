@@ -1,0 +1,30 @@
+{
+    "Author": "Mark Winch",
+    "Date": "2025-02-24",
+    "Title": "Avowed",
+    "ImagePath": "assets/games/avowed_main.jpg",
+    "SecondaryImagePath": "assets/games/avowed_second.jpg",
+    "Excerpt": "A good atmospheric RPG with meaningful choices, held back by a rushed ending.",
+    "ReviewScore": 7,
+    "Paragraph": [
+        "Avowed is Obsidian at its core. The world of the Living Lands is rich with personality and it’s constantly rewards curiosity and attention to detail even though it is not the biggest RPG out there.",
+        "The choices in Avowed feel organic, not just a matter of good or evil, but about values, belief, and consequence. I often found myself hesitating before answering because the morality of the decisions are always ambiguous. The characters you encounter during your adventure are also well written. They have a lot of personality and feel unique from one another.",
+        "The companions are another highlight. I genuinely enjoyed spending time with them and learn about them in their own quests. That being said, if you play as a pro-empire character, they can feel oddly disconnected from your motivations. It sometimes seems like they have no real reason to stay with you which makes certain dynamics feel forced. It’s not game-breaking, but it stands out in a story that otherwise feels so reactive.",
+        "One thing that stood out is the interaction with the character in your head (to avoid any spoilers). It is the first time I have that kind of interaction and organic development in a video game. Without going into details, it was ominous, weird, and amazing. The line between guidance, manipulation and companionship was blurred and was suprised by how much the character rembered previous interactions. It adds a layer of depth that I was not expecting.",
+        "Visually, the game looks good enough, even if not groundbreaking. It’s colorful and stylized, but it won’t make you stop to admire every view. The atmosphere is what really sells it. The map itself isn’t as big as you’d expect, but I think it play in Avowed favor as each location doesn't feel like a filler.",
+        "Combat is straightforward but satisfying. It feels close to a mix between Skyrim and The Outer Worlds, do not expect something as freeform as Skyrim though. The build variety is there, and experimenting with magic or melee keep things interesting. It works well for what the game wants to be.",
+        "Where Avowed stumbles is near the end. The story have a good build up with very intesresting choices and then it’s over. The ending feels rushed, like it’s missing one last act to truly bring everything together. You don't get the sense of finality you would expect from something that invests so much in characters and choices.",
+        "Despite that, I had a good time. Avowed is a game that knows what it wants to be. I just wish it had taken a little more time to land its final note."
+    ],
+    "GoodSummary": [
+        "Organic and meaningful choices",
+        "Great companions",
+        "Good atmosphere and tone",
+        "Satisfying combat system"
+    ],
+    "BadSummary": [
+        "Ending feels rushed",
+        "Some companion dynamics feel forced for pro-empire paths",
+        "Visuals are serviceable but not striking"
+    ]
+}
