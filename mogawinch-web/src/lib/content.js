@@ -11,7 +11,7 @@ import contentIndex from '../content/index.json';
 
 const modules = import.meta.glob('/src/content/**/*.json', { eager: true });
 
-const STATIC_ROUTES = ['/', '/about', '/privacy', '/terms', '/reviews/games', '/blogs'];
+const STATIC_ROUTES = ['/', '/about', '/projects', '/privacy', '/terms', '/reviews/games', '/blogs'];
 
 function typeFromPath(path) {
   if (path.startsWith('content/reviews/games/')) return 'game';

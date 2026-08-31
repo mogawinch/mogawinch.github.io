@@ -4,6 +4,7 @@ import Home from '@/pages/Home';
 import About from '@/pages/About';
 import Privacy from '@/pages/Privacy';
 import Terms from '@/pages/Terms';
+import Projects from '@/pages/Projects';
 import GameReviews from '@/pages/GameReviews';
 import GameReviewDetail from '@/pages/GameReviewDetail';
 import Blogs from '@/pages/Blogs';
@@ -18,6 +19,7 @@ export const routes = [
     children: [
       { index: true, element: <Home /> },
       { path: 'about', element: <About /> },
+      { path: 'projects', element: <Projects /> },
       { path: 'privacy', element: <Privacy /> },
       { path: 'terms', element: <Terms /> },
       { path: 'reviews/games', element: <GameReviews /> },
