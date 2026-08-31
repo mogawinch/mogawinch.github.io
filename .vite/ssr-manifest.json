@@ -4,10 +4,10 @@
   "\u0000/home/runner/work/mogawinch.github.io/mogawinch.github.io/mogawinch-web/node_modules/prop-types/index.js?commonjs-module": [],
   "\u0000/home/runner/work/mogawinch.github.io/mogawinch.github.io/mogawinch-web/node_modules/react-dom/cjs/react-dom.production.min.js?commonjs-exports": [],
   "\u0000/home/runner/work/mogawinch.github.io/mogawinch.github.io/mogawinch-web/node_modules/react-dom/client.js?commonjs-es-import": [
-    "/assets/client-Dst5tQ2O.js"
+    "/assets/client-BwRBqikz.js"
   ],
   "\u0000/home/runner/work/mogawinch.github.io/mogawinch.github.io/mogawinch-web/node_modules/react-dom/client.js?commonjs-exports": [
-    "/assets/client-Dst5tQ2O.js"
+    "/assets/client-BwRBqikz.js"
   ],
   "\u0000/home/runner/work/mogawinch.github.io/mogawinch.github.io/mogawinch-web/node_modules/react-dom/index.js?commonjs-es-import": [],
   "\u0000/home/runner/work/mogawinch.github.io/mogawinch.github.io/mogawinch-web/node_modules/react-dom/index.js?commonjs-module": [],
@@ -37,9 +37,12 @@
   "node_modules/lucide-react/dist/esm/icons/check.js": [],
   "node_modules/lucide-react/dist/esm/icons/chevron-left.js": [],
   "node_modules/lucide-react/dist/esm/icons/chevron-right.js": [],
+  "node_modules/lucide-react/dist/esm/icons/gamepad-2.js": [],
   "node_modules/lucide-react/dist/esm/icons/link-2.js": [],
   "node_modules/lucide-react/dist/esm/icons/menu.js": [],
   "node_modules/lucide-react/dist/esm/icons/search.js": [],
+  "node_modules/lucide-react/dist/esm/icons/sparkles.js": [],
+  "node_modules/lucide-react/dist/esm/icons/wrench.js": [],
   "node_modules/lucide-react/dist/esm/icons/x.js": [],
   "node_modules/lucide-react/dist/esm/shared/src/utils.js": [],
   "node_modules/prop-types/factoryWithThrowingShims.js": [],
@@ -47,7 +50,7 @@
   "node_modules/prop-types/lib/ReactPropTypesSecret.js": [],
   "node_modules/react-dom/cjs/react-dom.production.min.js": [],
   "node_modules/react-dom/client.js": [
-    "/assets/client-Dst5tQ2O.js"
+    "/assets/client-BwRBqikz.js"
   ],
   "node_modules/react-dom/index.js": [],
   "node_modules/react-fast-compare/index.js": [],
@@ -109,5 +112,6 @@
   "src/pages/Home.jsx": [],
   "src/pages/NotFound.jsx": [],
   "src/pages/Privacy.jsx": [],
+  "src/pages/Projects.jsx": [],
   "src/pages/Terms.jsx": []
 }
