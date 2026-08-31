@@ -19,15 +19,16 @@
         @if (Reviews.Count() > 0)
         {
             var first = Reviews.First();
-
-            <ArticleOverview ImagePath="@first.ImagePath"
-                            Title="@first.Title"
-                            Author="@first.Author"
-                            Date="@first.Date"
-                            Excerpt="@first.Excerpt"
-                            IsFeatured="true"
-                            ReviewScore="@first.ReviewScore"
-                            OnClickCallback="() => NavigateToGameReview(first.Path)" />
+            <div class="featured-container">
+                <ArticleOverview ImagePath="@first.ImagePath"
+                                Title="@first.Title"
+                                Author="@first.Author"
+                                Date="@first.Date"
+                                Excerpt="@first.Excerpt"
+                                IsFeatured="true"
+                                ReviewScore="@first.ReviewScore"
+                                OnClickCallback="() => NavigateToGameReview(first.Path)" />
+            </div>
         }
         <h2 class="article-title">Featured Games</h2>
         <div class="article-grid">

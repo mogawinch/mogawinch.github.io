@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\assets\" />
+    <Folder Include="wwwroot\content\links\" />
   </ItemGroup>
 
 </Project>

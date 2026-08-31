@@ -46,14 +46,14 @@
     box-shadow: 0 6px 20px rgba(0,0,0,0.25);
 }
 
-    .blog-notes h2 {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-    }
+.blog-notes h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
 
 .blog-meta {
     font-size: 0.9rem;
-    opacity: 0.9; /* slightly darker */
+    opacity: 0.9;
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
@@ -62,39 +62,94 @@
 
 .blog-author {
     font-weight: 500;
-    color: #888; /* darker, subtle tone */
+    color: #888;
 }
 
 .blog-date {
-    color: #777; /* slightly darker than before */
+    color: #777;
 }
 
 .separator {
-    color: #666; /* darker dot */
+    color: #666;
 }
 
 .blog-middle-image {
     width: 100%;
-    margin: 1.5rem 0; /* spacing above and below */
+    margin: 1.5rem 0;
     text-align: center;
 }
 
 .blog-middle-image img {
-    width: 80%;          /* smaller than full width */
-    max-width: 500px;    /* prevent it from getting too large on desktop */
+    width: 80%;
+    max-width: 500px;
     height: auto;
     border-radius: 12px;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.2); /* lighter shadow than main banner */
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
     object-fit: cover;
     display: block;
-    margin: 0 auto;      /* center the image */
+    margin: 0 auto;
 }
 
-/* Responsive for Mobile */
+
+/* ================================================= */
+/* ================= MOBILE POLISH ================= */
+/* ================================================= */
+
 @media (max-width: 641px) {
+
+    /* Overall container: less padding, less gap */
+    .blog-page {
+        padding: 1rem;
+        gap: 1.25rem;
+    }
+
+    /* Banner: less height on mobile */
+    .blog-banner img {
+        height: 200px;
+        border-radius: 10px;
+    }
+
+    /* Title: scale down and tighten */
+    .blog-page-title {
+        font-size: 1.45rem;
+        line-height: 1.2;
+        margin-bottom: 0.5rem;
+    }
+
+    /* Meta: wrap nicely, slightly bigger for readability */
+    .blog-meta {
+        font-size: 0.95rem;
+        flex-wrap: wrap;
+        row-gap: 0.25rem;
+    }
+
+    /* Paragraph readability */
+    .blog-content p {
+        font-size: 1.05rem;
+        line-height: 1.75;
+        margin-bottom: 0.9rem;
+    }
+
+    /* Notes card: bigger radius + better padding */
+    .blog-notes {
+        padding: 1.1rem;
+        border-radius: 16px;
+    }
+
+    .blog-notes h2 {
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+    }
+
+    /* Middle image: full width and nicer spacing */
+    .blog-middle-image {
+        margin: 1rem 0;
+    }
+
     .blog-middle-image img {
-        width: 95%;       /* almost full width on small screens */
-        max-width: unset; /* allow flexibility */
+        width: 100%;
+        max-width: unset;
         height: auto;
+        border-radius: 12px;
     }
 }
