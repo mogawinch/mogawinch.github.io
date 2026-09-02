@@ -36,8 +36,8 @@ export default function Home() {
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
             I'm Mark Winch. I write considered, spoiler-free reviews of the games I spend real time
-            with, judged on the value they deliver for their price - plus the occasional blog post
-            on gaming and the industry around it.
+            with, judged on the value they deliver for their price. I also post now and then about
+            gaming and the industry around it.
           </p>
         </section>
 

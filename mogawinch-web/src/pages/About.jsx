@@ -57,26 +57,6 @@ export default function About() {
             error is identified.
           </p>
         </div>
-
-        <h2 className="font-heading mt-14 mb-5 text-xl font-semibold tracking-tight">Our Writers</h2>
-        <div className="rounded-xl border border-border/60 bg-card p-6 sm:p-7">
-          <img
-            src="/assets/writers/markwinch.jpg"
-            alt="Mark Winch"
-            className="h-20 w-20 rounded-full object-cover"
-          />
-          <h3 className="font-heading mt-4 text-lg font-semibold">Mark Winch</h3>
-          <p className="text-sm text-muted-foreground">Founder &amp; Main Writer</p>
-          <p className="mt-3 text-sm leading-relaxed text-foreground/85">
-            Mark has worked in the video game industry for several years, primarily at Ubisoft, where he
-            developed a strong understanding of how games are designed and produced. A lifelong gamer across
-            both PC and consoles, his reviews focus on honesty, clarity, and how much <em>value</em> a game
-            truly delivers for its market price.
-            <br />
-            <br />
-            To maintain transparency and avoid conflicts of interest, Mark does not review Ubisoft titles.
-          </p>
-        </div>
       </main>
     </>
   );

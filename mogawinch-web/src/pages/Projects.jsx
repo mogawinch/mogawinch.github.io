@@ -10,7 +10,7 @@ const projects = [
     tag: 'RomHack · In Development',
     status: 'In Development',
     description:
-      "A direct follow-up to Pokémon Emerald. With Norman gone, you step into the Petalburg Gym in your father's stead - and discover that running a gym is nothing like challenging one.",
+      "A direct follow-up to Pokémon Emerald. With Norman gone, you step into the Petalburg Gym in your father's stead, and discover that running a gym is nothing like challenging one.",
     highlights: [
       "A continuation of Emerald's story, not a new region",
       "Take the reins of the Petalburg Gym in your father's place",
