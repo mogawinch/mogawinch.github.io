@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import ThemeToggle from '@/components/ThemeToggle';
+import Logo from '@/components/Logo';
 
 const links = [
   { label: 'Home', to: '/' },
@@ -23,7 +24,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b border-border/70 bg-background/85 backdrop-blur">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
         <Link to="/" className="group flex items-center gap-2">
-          <img src="/assets/mogawinch_logo.svg" alt="Mogawinch HQ" className="h-8 w-8" />
+          <Logo className="h-8 w-8 text-foreground" />
           <span className="font-heading text-xl font-semibold tracking-tight">Mogawinch HQ</span>
         </Link>
 
