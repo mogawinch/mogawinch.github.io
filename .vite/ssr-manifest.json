@@ -4,10 +4,10 @@
   "\u0000/home/runner/work/mogawinch.github.io/mogawinch.github.io/mogawinch-web/node_modules/prop-types/index.js?commonjs-module": [],
   "\u0000/home/runner/work/mogawinch.github.io/mogawinch.github.io/mogawinch-web/node_modules/react-dom/cjs/react-dom.production.min.js?commonjs-exports": [],
   "\u0000/home/runner/work/mogawinch.github.io/mogawinch.github.io/mogawinch-web/node_modules/react-dom/client.js?commonjs-es-import": [
-    "/assets/client-CKXJaV_g.js"
+    "/assets/client-Cqak_7AK.js"
   ],
   "\u0000/home/runner/work/mogawinch.github.io/mogawinch.github.io/mogawinch-web/node_modules/react-dom/client.js?commonjs-exports": [
-    "/assets/client-CKXJaV_g.js"
+    "/assets/client-Cqak_7AK.js"
   ],
   "\u0000/home/runner/work/mogawinch.github.io/mogawinch.github.io/mogawinch-web/node_modules/react-dom/index.js?commonjs-es-import": [],
   "\u0000/home/runner/work/mogawinch.github.io/mogawinch.github.io/mogawinch-web/node_modules/react-dom/index.js?commonjs-module": [],
@@ -40,8 +40,10 @@
   "node_modules/lucide-react/dist/esm/icons/gamepad-2.js": [],
   "node_modules/lucide-react/dist/esm/icons/link-2.js": [],
   "node_modules/lucide-react/dist/esm/icons/menu.js": [],
+  "node_modules/lucide-react/dist/esm/icons/moon.js": [],
   "node_modules/lucide-react/dist/esm/icons/search.js": [],
   "node_modules/lucide-react/dist/esm/icons/sparkles.js": [],
+  "node_modules/lucide-react/dist/esm/icons/sun.js": [],
   "node_modules/lucide-react/dist/esm/icons/wrench.js": [],
   "node_modules/lucide-react/dist/esm/icons/x.js": [],
   "node_modules/lucide-react/dist/esm/shared/src/utils.js": [],
@@ -50,7 +52,7 @@
   "node_modules/prop-types/lib/ReactPropTypesSecret.js": [],
   "node_modules/react-dom/cjs/react-dom.production.min.js": [],
   "node_modules/react-dom/client.js": [
-    "/assets/client-CKXJaV_g.js"
+    "/assets/client-Cqak_7AK.js"
   ],
   "node_modules/react-dom/index.js": [],
   "node_modules/react-fast-compare/index.js": [],
@@ -78,6 +80,7 @@
   "src/components/Pagination.jsx": [],
   "src/components/SearchBox.jsx": [],
   "src/components/ShareButton.jsx": [],
+  "src/components/ThemeToggle.jsx": [],
   "src/components/ui/badge.jsx": [],
   "src/content/blogs/farewelltolastgenconsole.json": [],
   "src/content/blogs/futurestorytelling.json": [],
