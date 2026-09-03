@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Logo from '@/components/Logo';
 
 const social = [
   { label: 'Buy Me a Coffee', href: 'https://buymeacoffee.com/mogawinchhq', icon: '/assets/bmc.png' },
   { label: 'Bluesky', href: 'https://bsky.app/profile/mogawinchhq.bsky.social', icon: '/assets/bluesky.png' },
-  { label: 'X (Twitter)', href: 'https://x.com/MogawinchHQ', icon: '/assets/twitter.png' },
+  { label: 'X (Twitter)', href: 'https://x.com/MogawinchHQ', icon: '/assets/twitter.png', invertOnDark: true },
 ];
 
 export default function Footer() {
@@ -14,7 +15,7 @@ export default function Footer() {
         <div className="flex flex-col items-start justify-between gap-8 md:flex-row">
           <div className="max-w-sm">
             <Link to="/" className="flex items-center gap-2">
-              <img src="/assets/mogawinch_logo.svg" alt="Mogawinch HQ" className="h-7 w-7" />
+              <Logo className="h-7 w-7" />
               <span className="font-heading text-xl font-semibold tracking-tight">Mogawinch HQ</span>
             </Link>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
@@ -30,7 +31,11 @@ export default function Footer() {
                   aria-label={s.label}
                   className="opacity-80 transition-opacity hover:opacity-100"
                 >
-                  <img src={s.icon} alt="" className="h-6 w-6" />
+                  <img
+                    src={s.icon}
+                    alt=""
+                    className={`h-6 w-6 ${s.invertOnDark ? 'dark:invert' : ''}`}
+                  />
                 </a>
               ))}
             </div>

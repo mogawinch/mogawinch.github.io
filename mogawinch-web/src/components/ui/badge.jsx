@@ -9,9 +9,9 @@ const badgeVariants = cva(
     variants: {
       variant: {
         default: 'bg-secondary text-secondary-foreground ring-border',
-        low: 'bg-rose-50 text-rose-700 ring-rose-200',
-        medium: 'bg-amber-50 text-amber-700 ring-amber-200',
-        high: 'bg-emerald-50 text-emerald-700 ring-emerald-200',
+        low: 'bg-rose-50 text-rose-700 ring-rose-200 dark:bg-rose-950/50 dark:text-rose-300 dark:ring-rose-900',
+        medium: 'bg-amber-50 text-amber-700 ring-amber-200 dark:bg-amber-950/50 dark:text-amber-300 dark:ring-amber-900',
+        high: 'bg-emerald-50 text-emerald-700 ring-emerald-200 dark:bg-emerald-950/50 dark:text-emerald-300 dark:ring-emerald-900',
       },
     },
     defaultVariants: {

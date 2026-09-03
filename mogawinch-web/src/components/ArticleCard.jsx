@@ -21,7 +21,7 @@ export default function ArticleCard({ article, featured = false }) {
   return (
     <Link
       to={article.route}
-      className={`group flex overflow-hidden rounded-xl border border-border/60 bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/[0.03] ${
+      className={`group flex overflow-hidden rounded-xl border border-border/60 bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/[0.03] dark:hover:border-border dark:hover:shadow-black/50 ${
         featured ? 'flex-col md:flex-row' : 'flex-col'
       }`}
     >

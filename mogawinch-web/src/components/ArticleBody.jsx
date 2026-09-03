@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import ImageModal from '@/components/ImageModal';
 
 function scoreTone(score) {
-  if (score <= 5) return 'text-rose-600';
-  if (score <= 7) return 'text-amber-600';
-  return 'text-emerald-600';
+  if (score <= 5) return 'text-rose-600 dark:text-rose-400';
+  if (score <= 7) return 'text-amber-600 dark:text-amber-400';
+  return 'text-emerald-600 dark:text-emerald-400';
 }
 
 // Shared paragraph/secondary-image renderer for both game reviews and blog
@@ -34,7 +34,7 @@ export default function ArticleBody({ paragraphs, secondaryImagePath, reviewScor
           <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
             <div className="grid flex-1 gap-6 sm:grid-cols-2">
               <div>
-                <h3 className="font-heading text-sm font-semibold uppercase tracking-wide text-emerald-600">Good</h3>
+                <h3 className="font-heading text-sm font-semibold uppercase tracking-wide text-emerald-600 dark:text-emerald-400">Good</h3>
                 <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-foreground/85">
                   {(goodSummary || []).map((g, i) => (
                     <li key={i}>{g}</li>
@@ -42,7 +42,7 @@ export default function ArticleBody({ paragraphs, secondaryImagePath, reviewScor
                 </ul>
               </div>
               <div>
-                <h3 className="font-heading text-sm font-semibold uppercase tracking-wide text-rose-600">Bad</h3>
+                <h3 className="font-heading text-sm font-semibold uppercase tracking-wide text-rose-600 dark:text-rose-400">Bad</h3>
                 <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-foreground/85">
                   {(badSummary || []).map((b, i) => (
                     <li key={i}>{b}</li>
