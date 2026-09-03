@@ -26,12 +26,33 @@
     --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
   }
 
+  .dark {
+    --background: 0 0% 6.5%;
+    --foreground: 0 0% 96%;
+    --card: 0 0% 9.5%;
+    --card-foreground: 0 0% 96%;
+    --primary: 0 0% 96%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 96%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 64%;
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 96%;
+    --destructive: 0 62.8% 40%;
+    --destructive-foreground: 0 0% 96%;
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 0 0% 70%;
+  }
+
   * {
     @apply border-border;
   }
 
   body {
     @apply bg-background text-foreground font-body antialiased;
+    transition: background-color 0.2s ease, color 0.2s ease;
   }
 
   h1, h2, h3, h4 {
@@ -50,7 +71,7 @@
     @apply font-heading text-2xl font-semibold mt-12 mb-5 text-foreground;
   }
   .article-prose h3 {
-    @apply font-heading text-xl font-semibold mt-8 mb-4 text-foreground;
+    @apply font-heading text-xl font-semibold mt-8 mb-4;
   }
   .article-prose ul {
     @apply list-disc pl-6 mb-6 space-y-2;

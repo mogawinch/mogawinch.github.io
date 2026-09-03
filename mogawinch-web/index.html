@@ -11,6 +11,20 @@
     <!-- title/description/OG are set per-route via vite-react-ssg's <Head> (see src/pages/*), so every
          real route always supplies its own - no static fallback here to avoid duplicate <title>/<meta
          name="description"> tags in the prerendered HTML. -->
+    <script>
+      // Applies the saved/system theme before first paint, so there's no
+      // flash of the wrong theme. Prerendered HTML always ships in light
+      // mode (the build has no notion of a visitor's preference); this
+      // runs client-side, ahead of React hydration, and is the only place
+      // in the app allowed to touch document at module scope.
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var dark = stored ? stored === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+          document.documentElement.classList.toggle('dark', dark);
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
