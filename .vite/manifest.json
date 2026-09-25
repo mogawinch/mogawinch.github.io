@@ -1,0 +1,23 @@
+{
+  "_client-BmYV1L2M.js": {
+    "file": "assets/client-BmYV1L2M.js",
+    "name": "client",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html"
+    ]
+  },
+  "index.html": {
+    "file": "assets/app-CfGqWyBr.js",
+    "name": "app",
+    "src": "index.html",
+    "isEntry": true,
+    "dynamicImports": [
+      "_client-BmYV1L2M.js",
+      "_client-BmYV1L2M.js"
+    ],
+    "css": [
+      "assets/app-BJY-a_z0.css"
+    ]
+  }
+}
