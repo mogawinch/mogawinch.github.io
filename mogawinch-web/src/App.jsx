@@ -1,0 +1,37 @@
+import React from 'react';
+import RootLayout from '@/layouts/RootLayout';
+import Home from '@/pages/Home';
+import About from '@/pages/About';
+import Privacy from '@/pages/Privacy';
+import Terms from '@/pages/Terms';
+import Projects from '@/pages/Projects';
+import GameReviews from '@/pages/GameReviews';
+import GameReviewDetail from '@/pages/GameReviewDetail';
+import NotFound from '@/pages/NotFound';
+import { getArticlesByType } from '@/lib/content';
+
+export const routes = [
+  {
+    path: '/',
+    element: <RootLayout />,
+    children: [
+      { index: true, element: <Home /> },
+      { path: 'about', element: <About /> },
+      { path: 'projects', element: <Projects /> },
+      { path: 'privacy', element: <Privacy /> },
+      { path: 'terms', element: <Terms /> },
+      { path: 'reviews/games', element: <GameReviews /> },
+      {
+        path: 'reviews/games/*',
+        element: <GameReviewDetail />,
+        // Determines which of the Base64 review slugs get prerendered to
+        // real static HTML - shares the same content source as the sitemap
+        // generator (src/lib/content.js) so the two can never drift apart.
+        getStaticPaths: () => getArticlesByType('game').map((a) => `reviews/games/${a.slug}`),
+      },
+      { path: '*', element: <NotFound /> },
+    ],
+  },
+];
+
+export default routes;
